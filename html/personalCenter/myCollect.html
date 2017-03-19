@@ -1,0 +1,53 @@
+<ion-view id="myCollect" view-title="我的收藏" cache-view="false">
+    <ion-header-bar class="header bar_coustom_header">
+        <div class="buttons left_btn">
+            <div class="buttons">
+                <button class="button goback_icon" ng-click="$ionicGoBack()"></button>
+            </div>
+        </div>
+        <h1 class="titles">我的收藏</h1>
+        <div class="canDelete" ng-click="changeState();canDelete = !canDelete">批量编辑</div>
+    </ion-header-bar>
+    <!--<div ng-show="showMessage" class="bounced">{{AlertMessage}}</div>-->
+    <ion-content lazy-scroll>
+        <div class="contentList" ng-show="hasMoreCollect">
+            <!-- ng-repeat -->
+            <ion-list show-delete="canDelete">
+                <ion-item ng-repeat="item in collectListData | orderBy:'-createTime'">
+                    <a ng-href="{{item.url}}" class="contentEveryone" >
+                        <div class="contentLeft">
+                            <!--<i class="iconShopping"></i>-->
+                            <img image-lazy-src="{{item.image}}" image-lazy-loader="ios"
+                                onerror="javascript:this.src='https://yxy.yxzhy.cc/assets/library/assets/defaultimg/headicon.png';">
+                        </div>
+                        <div class="contentRight">
+                            <div class="contentRightTop">
+                                <h4 class="shoppingName">{{item.title}}</h4>
+                                <p class="time">{{item.createTime*1000 | date:'yyyy-MM-dd'}}</p>
+                            </div>
+                            <div class="contentRightBottom">
+                                <h5>{{item.description}}</h5>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 暂时没有解决用angular控制ng-repeat 的子作用域的-->
+                    <ion-delete-button class="DefinitionTags ion-ios-circle-outline numbers-{{$index}}" ng-click="onItemDelete(item,$index)"></ion-delete-button>
+                </ion-item>
+            </ion-list>
+        </div>
+        <!-- 没有数据时，显示 -->
+        <div ng-show="!hasMoreCollect" class="hasMoreCollect">
+            <img ng-src="assets/img/noMoreCollect.png" alt="">
+            <h3 >这里空空的，赶紧装点东西吧！</h3>
+        </div>
+        <ion-infinite-scroll ng-if="pageCount > pageNo " on-infinite="getMyCollectData()" immediate-check="false" ></ion-infinite-scroll>
+    </ion-content>
+    <footer ng-show="hasMoreCollect && changeFooterState" class="footer">
+       <div class="footerMiddle">
+           <div class="text " ng-click="chooseAll()">全选</div>
+           <div class="text " ng-click="cancelAll()">取消全选</div>
+           <div class="text " ng-click="sureDelete()">确定删除{{chooseDeleteNum}}</div>
+       </div>
+    </footer>
+</ion-view>

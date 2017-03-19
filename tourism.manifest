@@ -1,0 +1,14 @@
+CACHE MANIFEST
+#VERSION 1.0
+
+
+
+#common css
+http://cdn.bootcss.com/ionic/1.3.2/css/ionic.min.css
+
+#js
+http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js
+http://cdn.bootcss.com/ionic/1.3.2/js/ionic.bundle.min.js
+
+NETWORK:
+*

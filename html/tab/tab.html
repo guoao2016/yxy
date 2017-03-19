@@ -1,0 +1,28 @@
+
+<ion-tabs class="tabs-icon-top tabs-color-active-positive" id="app-tabs">
+
+ <!--景区推荐-->
+  <ion-tab title="景区推荐" icon-off="scenicRecommend-off" icon-on="scenicRecommend-on" href="#/tab/scenicRecommend">
+    <ion-nav-view name="tab-scenicRecommend"></ion-nav-view>
+  </ion-tab>
+
+  <!--边游边听-->
+  <ion-tab title="边游边听" icon-off="tourismAndListen-off" icon-on="tourismAndListen-on" href="#/tab/tourismAndListen">
+    <ion-nav-view name="tab-tourismAndListen" id="listAndMap"></ion-nav-view>
+  </ion-tab>
+
+  <!--游记攻略-->
+  <ion-tab title="游记攻略" icon-off="travelNotes-off" icon-on="travelNotes-on" href="#/tab/travelNotes">
+    <ion-nav-view name="tab-travelNotes"></ion-nav-view>
+  </ion-tab>
+
+  <!--个人信息-->
+  <ion-tab badge="unreadCount"
+           title="个人信息"
+           icon-off="personalCenter-off"
+           icon-on="personalCenter-on"
+           ng-click="judgeUserLogin()">
+    <ion-nav-view name="tab-userCenter"></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>

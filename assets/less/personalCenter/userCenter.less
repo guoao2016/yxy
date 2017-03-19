@@ -1,0 +1,103 @@
+#userCenter{
+  //内容区
+  .content{
+    padding-top:44px;
+    .user_logo{
+      text-align: center;
+      img{
+        width:100px;
+        height:100px;
+        border-radius: 50%;
+        vertical-align: bottom;
+      }
+
+      p{
+        margin-top:20px;
+        font-size:15px;
+        color:#332f2b;
+        text-align: center;
+        text-shadow: 1px 2px 2px rgba(0,0,0,.2);
+      }
+    }
+
+    .lists{
+      margin-top:31px;
+      ul{
+        padding:0 12px;
+        li{
+          height:44px;
+          position: relative;
+          line-height:44px;
+          font-size:15px;
+          border-bottom:1px solid #e0e0e0;
+          .badge{
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            border-radius: 50%;
+            background-color: #DC3807;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            line-height: 20px;
+          }
+          &:after{
+            content:" ";
+            display: inline-block;
+            width:10px;
+            height:25px;
+            position: absolute;
+            top:18px;
+            right:18px;
+            background: url(../img/icon_new.png) no-repeat -40px -234px;//80  468
+            background-size: 150px;
+          }
+          i{
+            display: inline-block;
+            width: 28px;
+            height: 25px;
+            position: relative;
+            top: 10px;
+            margin-left:18px;
+            margin-right: 10px;
+            background: url(../img/icon_new.png) no-repeat;
+            background-size: 150px;
+            &.message{
+              background-position:-33px -172px ;
+            }
+            &.info{
+              background-position:-33px -41px ;//-63px -83px
+            }
+            &.collect{
+              background-position: -33px -75px;
+            }
+            &.notes{
+              background-position: -33px -110px;
+            }
+            &.mail_list{
+              background-position: -33px -142px;
+            }
+            &.order{
+              background-position: -33px -174px;
+            }
+            &.coupon{
+              background-position: -33px -205px;
+            }
+          }
+        }
+      }
+    }
+    .exit_btn{
+      width: 88%;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      margin-bottom:20px;
+      margin-top: 40%;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #333;
+    }
+  }
+}

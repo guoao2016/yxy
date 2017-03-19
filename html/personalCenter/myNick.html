@@ -1,0 +1,27 @@
+<ion-view id="myNick" view-title="修改昵称" cache-view="false">
+    <ion-header-bar align-title="center" class="header">
+        <div class="buttons left_btn">
+            <div class="buttons">
+                <button class="button button_fff ion-ios-arrow-left" ng-click="$ionicGoBack()">
+
+                </button>
+            </div>
+        </div>
+        <h1 class="title">修改昵称</h1>
+        <div class="buttons right_btn">
+            <button class="button  button_fff"
+                    type="button"
+                    ng-click="sendMyNick()">
+                完成
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="wrap">
+        <div class="myNickWrap">
+            <label>昵称</label>
+            <input type="text" ng-model="$parent.myNick"  maxlength="8" placeholder="请输入昵称，请控制在八个字符以内">
+        </div>
+        <p class="suggest">昵称请使用文明字符，否则视为无效</p>
+
+    </ion-content>
+</ion-view>

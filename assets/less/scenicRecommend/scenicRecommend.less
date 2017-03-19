@@ -1,0 +1,91 @@
+#scenicRecommend{
+  background-color: #F2F2F2;
+  .headerSlider{
+    height: 150px !important;
+    .swiper-slide{
+      img{
+        height: 150px !important;
+        width: 100%;
+      }
+      .swiper-pagination-bullets{
+        bottom:0;
+        .swiper-pagination-bullet-active{
+          background-color: #FFFFFF;
+        }
+      }
+    }
+  }
+  nav.row{
+    margin: 10px 0;
+    background-color: #fff;
+    padding: 10px 0;
+    justify-content: space-between;
+    .col{
+      flex:0 0 48%;
+      padding: 0;
+  }
+  }
+  .scenicRecommendMain{
+    background-color: #FFFFFF;
+    padding: 12px 12px 5px 12px;
+    margin-bottom: 8px;
+    .recommendPhoto{
+      position: relative;
+      //延迟加载动画样式
+      .image-loader-container{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+      }
+      .nearscenic{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        img{
+          width:115px;
+          height:65px;
+        }
+      }
+      img{
+        height: 175px;
+      }
+      //p{
+      //  padding: 0 8px;
+      //  height: 20px;
+      //  text-align: center;
+      //  line-height: 20px;
+      //  border-bottom-right-radius: 10px;
+      //  position: absolute;
+      //  top:0;
+      //  left: 0;
+      //  font-size: 12px;
+      //  color: #FFFFFF;
+      //  background-color: rgba(60,226,137,0.8);
+      //}
+      i{
+        width: 48px;
+        height: 38px;
+        position: absolute;
+        top: 0;
+        right: 12px;
+        background: url("../img/icon_new.png") no-repeat 0 0;
+        background-size: 160px;
+      }
+    }
+    h3{
+      line-height: 1;
+      color: #333333;
+      font-size: 16px;
+      margin: 12px 0 8px;
+      font-weight: 600;
+    }
+    h6{
+      color: #999999;
+      font-weight: 600;
+      font-size: 12px;
+    }
+  }
+
+}

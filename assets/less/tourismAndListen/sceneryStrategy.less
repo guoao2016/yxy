@@ -1,0 +1,201 @@
+#sceneryStrategy{
+  .scenery_strategy{
+    background-color: #ededed;
+    .tl-strategy {
+      .thumbs-up {
+        display: inline-block;
+        background-image: url(../img/autoGuide_icons.png);
+        background-repeat: no-repeat;
+        -webkit-background-size: 50px auto;
+        background-size: 50px auto;
+        width: 22px;
+        height: 20px;
+        background-position:-20px -174px;
+        margin-right: 5px;
+        position: relative;
+        top: 1px;
+      }
+      .active-thumb{
+        background-position: -21px -197px;
+        top: 5px;
+      }
+      .strategy-group {
+        padding: 10px 12px;
+        .list-item {
+          display: flex;
+          height: 100px;
+          background-color: #fff;
+          border-radius: 5px;
+          padding: 0;
+          border: 1px solid #eee;
+          margin-bottom: 5px;
+          overflow: hidden;
+          .lt {
+            flex: 1;
+            max-width: 100px;
+            height: 100px;
+            img{
+              width:100%;
+              height:100%;
+            }
+          }
+          .rt {
+            flex:1;
+            padding-left: 14px;
+            position: relative;
+            .p-title{
+              display: block;
+              font-size:16px;
+              margin: 6px 0;
+              color: #333;
+              padding-right: 5px;
+              .tl{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+              }
+              .p-notes{
+                font-size: 12px;
+                color: #999;
+                //overflow: hidden;
+                //text-overflow: ellipsis;
+                //display: -webkit-box;
+                //-webkit-line-clamp: 2;
+                //-webkit-box-orient: vertical;
+                //min-height: 40px;
+              }
+            }
+            .limit {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              margin-bottom: 20px;
+              min-height: 50px;
+            }
+            .p-info {
+              display: flex;
+              color: #999;
+              font-size: 12px;
+              padding: 0 8px 0 0;
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              .brief {
+                flex: 1;
+                color:#999;
+              }
+              .rt-thumb{
+                position: relative;
+                top: -5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+#sceneryStrategyDetail{
+  .main_title{
+    padding: 10px 12px ;
+    text-align: center;
+    h3{
+      font-size: 18px; ;
+      font-weight: 400;
+    }
+    .sub_title{
+      position: relative;
+      padding-top: 5px;
+      span{
+        position: relative;
+        font-size: 12px;
+        color: #f19503;
+        padding: 0 20px;
+        background-color: #FFFFFF;
+        //&:after,&:before{
+        //  content: '';
+        //  display: block;
+        //  width: 6px;
+        //  height: 6px;
+        //  border-radius: 50%;
+        //  background-color: #999;
+        //  position: absolute;
+        //}
+        //&:after{
+        //  top: 6px;
+        //  left: 0;
+        //}
+        //&:before{
+        //  top:6px;
+        //  right: 0;
+        //}
+      }
+      //i{
+      //  display: inline-block;
+      //  margin: 0 auto;
+      //  width: 100%;
+      //  height: 1px;
+      //  position: absolute;
+      //  top: 16px;
+      //  left: 0;
+      //  background: #ccc;
+      //}
+    }
+  }
+  .main_content{
+    padding: 0 12px 50px;
+    img{
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+  .travelDetail_footer{
+    background-color: #f7f7f7;
+    text-align: center;
+    display: flex;
+    line-height: 36px;
+    padding: 10px 0;
+    .logo{
+      display: inline-block;
+      background-image: url(../img/main.png);
+      width: 25px;
+      height: 25px;
+    }
+    .number{
+      padding-left: 1px;
+      position: relative;
+      top: -5px;
+    }
+    .left{
+      flex: 1;
+      border-right: 1px solid #9f9f9f;
+      // 用于切换图标
+      .logo_has{
+        background-position: -38px -292px;
+        background-size: 75px;
+      }
+      .logo_no{
+        background-position: -38px -269px;
+        background-size: 75px;
+      }
+    }
+    .right{
+      flex: 1;
+      // 用于切换图标
+      .logo_has{
+        background-position: -1px -2874px;
+        background-size: 50px;
+      }
+      .logo_no{
+        background-position: -25px -2874px;
+        background-size: 50px;
+      }
+    }
+  }
+}

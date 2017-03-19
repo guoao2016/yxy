@@ -1,0 +1,38 @@
+<ion-view id="userCenter" view-title="个人中心">
+    <!--<div class="bounced" ng-show="showMessage">{{alertMessage}}</div>-->
+    <ion-content class="content" scrollbar-y="false">
+        <!--头像-->
+        <section class="user_logo" ui-sref="myInfo">
+            <img ng-src="{{myIcon}}" alt="">
+            <p>{{myNick}}</p>
+        </section>
+        <section class="lists">
+            <ul>
+                <li ui-sref="myMessage">
+                    <i class="message"></i>我的消息
+                    <span ng-if="unreadCount>0" class="badge">{{unreadCount}}</span>
+                </li>
+                <li ui-sref="myInfo">
+                    <i class="info"></i>修改资料
+                </li>
+                <li ui-sref="myCollect">
+                    <i class="collect"></i>我的收藏
+                </li>
+                <li ui-sref="myNotesList">
+                    <i class="notes"></i>我的游记
+                </li>
+                <!--<li ui-sref="myBeans">-->
+                    <!--<i class="mail_list"></i>我的游豆-->
+                <!--</li>-->
+                <!--<li ui-sref="myOrder">-->
+                    <!--<i class="order"></i>我的订单-->
+                <!--</li>-->
+                <!--<li ui-sref="myCoupon">-->
+                    <!--<i class="coupon"></i>我的优惠券-->
+                <!--</li>-->
+            </ul>
+        </section>
+
+        <button class="button exit_btn" ng-click="logout()">退出登录</button>
+    </ion-content>
+</ion-view>

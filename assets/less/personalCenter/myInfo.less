@@ -1,0 +1,117 @@
+#myInfo{
+  .header{
+    border:none;
+    background-color:#fff;
+    .left_btn{
+      .button{
+        color:#0175ec;
+      }
+    }
+    .right_btn{
+      .button{
+        font-size:14px;
+        color:#0175ec;
+      }
+    }
+  }
+
+  .wrap{
+    padding-top:80px;
+    //overflow: visible;
+    .user_logo{
+      position: relative;
+      margin-bottom:70px;
+      text-align: center;
+      img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        vertical-align: bottom;
+      }
+      i{
+        display: inline-block;
+        width: 31px;
+        height: 31px;
+        background: url(../img/icon_new.png) no-repeat -64px -58px;
+        background-size: 150px;
+        position: absolute;
+        top: 72px;
+        left: 54%;
+      }
+      .upload{
+        position: absolute;
+        top:0;
+        left: 0;
+        display: block;
+        height: 100px;
+        width: 100%;
+        opacity: 0;
+      }
+    }
+    ul{
+      padding:0 12px;
+      li{
+        &:last-child{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 44px;
+          padding: 0 10px;
+          border: none;
+          border-bottom: 1px solid #e0e0e0;
+          background-color: inherit;
+          span {
+            display: inline-block;
+            width: 80px;
+            color: #4c4c4c;
+          }
+          input {
+            display: inline-block !important;
+            width: 66%;
+            text-align: right;
+            background-color: #fff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #332f2b;
+          }
+          i {
+            position: relative;
+            top: 2px;
+            color: #999;
+          }
+        }
+        label {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 44px;
+          padding: 0 10px;
+          border: none;
+          border-bottom: 1px solid #e0e0e0;
+          background-color: inherit;
+          span {
+            display: inline-block;
+            width: 80px;
+            color: #4c4c4c;
+          }
+          input {
+            display: inline-block !important;
+            width: 66%;
+            text-align: right;
+            background-color: #fff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #332f2b;
+          }
+          i {
+            position: relative;
+            top: 2px;
+            color: #999;
+          }
+        }
+      }
+    }
+  }
+}

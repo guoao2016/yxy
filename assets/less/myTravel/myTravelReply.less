@@ -1,0 +1,163 @@
+//评论详情
+#myTravelReply{
+  background-color:#ededed;
+  .header{
+    background-color:#F7F7F7;
+    .buttons{
+      &.left_btn{
+        .ion-ios-arrow-left{
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  .detail_comment{
+    padding:0 12px;
+    background-color:#fff;
+    ul{
+      padding-top:10px;
+      li{
+        display: flex;
+        .user_logo {
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+        }
+        .detail {
+          flex:1;
+          margin-left:3%;
+          .top{
+            display: flex;
+            height:50px;
+            align-items: center;
+            justify-content: space-between;
+            .left {
+              p {
+                &:first-child {
+                  font-size: 14px;
+                  color: #333;
+                }
+              }
+            }
+            button {
+              display: inline-block;
+              width: 45px;
+              height: 25px;
+              background-color: #fff;
+              border-radius: 3px;
+              font-size:13px;
+              color: #7e98c8;
+            }
+          }
+          .text{
+            word-break: break-all;
+          }
+          .bottom{
+            color:#9098a6;
+            button{
+              background-color: #fff;
+              color:#9098a6;
+            }
+          }
+        }
+      }
+    }
+  }
+  //下部回复评论列表
+  .detail_reply{
+    padding:10px 12px 0;
+    ul{
+      padding-top:10px;
+      li{
+        display: flex;
+        .user_logo {
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+        }
+        .detail {
+          flex:1;
+          margin-left:3%;
+          .top{
+            display: flex;
+            height:50px;
+            align-items: center;
+            justify-content: space-between;
+            .left {
+              p {
+                &:first-child {
+                  font-size: 14px;
+                  color: #333;
+                }
+              }
+            }
+            button {
+              display: inline-block;
+              width: 45px;
+              height: 25px;
+              border-radius: 3px;
+              font-size:13px;
+              color: #7e98c8;
+            }
+          }
+          .text{
+            word-break: break-all;
+          }
+          .bottom{
+            color:#9098a6;
+            button{
+              background-color:#ededed;
+              color:#9098a6;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer{
+    height:35px;
+    padding:0;
+    ul{
+      display: flex;
+      height:35px;
+      align-items: center;
+      li{
+        flex:1;
+        text-align: center;
+        font-size:13px;
+        color:#999;
+        &:first-child{
+          i{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 7px;
+            background: url(../img/icon_new.png) no-repeat;
+            background-size: 150px;
+            background-position: -92px -158px;//184 317
+          }
+        }
+        &:nth-child(2){
+          border:1px solid #e6e6e6;
+          border-top:none;
+          border-bottom:none;
+          i{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 7px;
+            background: url(../img/icon_new.png) no-repeat;
+            background-size: 150px;
+            background-position: -70px -158px;//184 317
+          }
+        }
+      }
+    }
+  }
+}

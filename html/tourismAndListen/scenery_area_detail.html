@@ -1,0 +1,112 @@
+<ion-view id="sceneryAreaDetail" view-title="景区介绍">
+  <ion-header-bar align-title="center" class="header gradient-bg">
+    <div class="buttons left_btn">
+      <div class="buttons">
+        <button ng-click="$ionicGoBack()" class="button ion-ios-arrow-left"></button>
+      </div>
+    </div>
+    <h1  class="title"></h1>
+    <div class="buttons right_btn">
+      <!--ui-sref="tourismAndListen_detail({itemId:areaId})"-->
+      <button class="button goToMap" ui-sref="tourismAndListen_detail({itemId:areaId})">
+      </button>
+    </div>
+  </ion-header-bar>
+
+  <ion-content delegate-handle="scenicArea" on-scroll="scrollChange()">
+      <section class="mainContent scenery-spot-wrap">
+        <div class="banner-panel">
+          <p>{{scenicDetailItem.title}}</p>
+          <img ng-src={{url}}{{scenicDetailItem.thumb640?scenicDetailItem.thumb640:scenicDetailItem.thumbnail}} alt="景区图片">
+        </div>
+        <div class="area-sign spot">
+          <a href="javascript:void(0)" class="spot-video">
+            <!--音频指令-->
+            <myaudio></myaudio>
+            <strong>边游边听</strong>
+            <p class="small">详细的景区介绍讲解</p>
+          </a>
+        </div>
+
+        <!--景区详情-->
+        <div class="sport-detail">
+          <div class="channel-content">
+            <p class="channel-title">景区详情</p>
+            <div ng-bind-html="scenicDetailItem.content">
+            </div>
+          </div>
+        </div>
+        <!--精选随感-->
+        <div   id="comment"></div>
+        <div class="fine-comments">
+          <div class="cts-title">
+            <div class="cts-txt">评论</div>
+          </div>
+          <div class="cts-content" ng-repeat="commentItem in commentItems">
+            <div   class="cts-item">
+              <div class="page-title">
+                <div class="user-portrait">
+                  <img ng-src={{commentItem.icon}} alt="头像">
+                </div>
+                <div class="user-name">
+                  {{commentItem.nick}}
+                  <div class="date">{{commentItem.createTime*1000 |date:"MM月dd日 HH:mm"}}</div>
+                </div>
+                <!--自定义点赞指令-->
+                <likesceniccomment number="commentItem.favor" id="commentItem.id"></likesceniccomment>
+              </div>
+              <a  class="txt-img" href="">
+                <div class="txt-show">
+                  {{commentItem.content}}
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+ </ion-content>
+
+  <ion-footer-bar>
+        <section class="footer define-footer">
+          <!-- 页面底部导航菜单 -->
+          <div class="footer-wrap">
+            <!--登录状态发评论-->
+            <p ng-if="hasLogin"
+               ui-sref="myCommentArea({commentId:areaId})"
+               class="comments">
+              <span class="editIcon"></span>
+              <span class="write-comment">写评论</span>
+            </p>
+            <!--未登录状态发评论-->
+            <p ng-if="noLogin"
+               ng-click="storageCurrentUrl()"
+               ui-sref="login"
+               class="comments">
+              <span class="editIcon"></span>
+              <span class="write-comment">写评论</span>
+            </p>
+
+            <!--自定义景区点赞指令-->
+            <likescenic number="scenicDetailItem.vpvote" id="areaId"></likescenic>
+
+            <collectheart  token='token'
+                           img="scenicDetailItem.thumb320"
+                           nick="scenicDetailItem.title"
+                           summary="scenicDetailItem.summary">
+            </collectheart>
+          </div>
+          <!--写游记悬浮图标-->
+          <!--登录-->
+          <p ng-if="hasLogin"
+             ui-sref="myNotesSend"
+             class="travelNote-item-fixed">
+          </p>
+          <!--未登录-->
+          <p ng-if="noLogin"
+             ui-sref="login"
+             class="travelNote-item-fixed">
+          </p>
+        </section>
+  </ion-footer-bar>
+
+</ion-view>

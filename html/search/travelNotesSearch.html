@@ -1,0 +1,46 @@
+<ion-view id="travelNotesSearch" view-title="搜索" cache-view="true">
+    <div class="header">
+        <div class="headTitle">
+            <div class="titleLeft" ng-click="$ionicGoBack()">
+                <i class="ion-ios-arrow-left"></i>
+            </div>
+            <div class="titleMiddle">
+                <label for="searchVal">
+                    <i class="ion-ios-search-strong"></i>
+                </label>
+                <input type="search" ng-model="searchVal" id="searchVal" placeholder="搜索..." autofocus>
+                <button ng-disabled="!searchVal" ng-click="clickKeywords(item,1)">搜索</button>
+            </div>
+        </div>
+        <div class="searchDetail">
+            <div class="searchHistory">
+                <span>搜索历史</span>
+                <i class="ion-ios-trash-outline" ng-click="clearHistoryData()"></i>
+            </div>
+            <div class="searchContent" >
+                <span  ng-repeat="item in historyData" ng-click="clickKeywords(item,0)">{{item}}</span>
+            </div>
+        </div>
+    </div>
+
+    <ion-content delegate-handle="searchList" on-scroll="scrollChooseContainer()" lazy-scroll>
+        <div class="othersNotes" ng-show="hasMoreData">
+            <div class="notes-list" ng-repeat="item in allSearchData | filter:enabled">
+                <a ng-href="#/travelDetail/{{item.id}}" class="notes-item " >
+                    <img class="item-left" image-lazy-src="http://tourism.yxzhy.cc{{item.thumbnail}}" image-lazy-loader="lines">
+                    <div class="item-right" ng-style="{width:getWidth()}">
+                        <h4 ng-style="{width:getWidth()}">{{item.title}}</h4>
+                        <p class="otherSummary">{{item.summary.slice(0,25)}}</p><!-- 后台已限制字符个数，这里再做安全限制-->
+
+                        <p class="orIcon"><i class="LoveOrHide myLove"></i>{{item.upvoteCounts}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div ng-show="!hasMoreData" class="noMoreData">
+            <img ng-src="assets/img/noMoreData.png" alt="">
+            <h3 class="">没有找到相关内容!</h3>
+        </div>
+        <ion-infinite-scroll ng-if="pageCount > page" on-infinite="getSearchData(item,true)" immediate-check="false" ></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

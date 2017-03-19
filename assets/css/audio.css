@@ -1,0 +1,134 @@
+@media screen and (min-width:320px) and (max-width:374px){html{font-size:12px;} #song-list:first-child{
+																					font-size: 16px;font-weight: bolder;font-family: "PingFang SC","Microfoft yahei" !important;
+																				}}
+@media screen and (min-width:375px) and (max-width:413px){html{font-size:14px;} #song-list:first-child{
+																				 font-size: 16px;font-weight: bold;font-family: "PingFang SC","Microfoft yahei" !important;
+																			 }}
+@media screen and (min-width:414px) and (max-width:639px){html{font-size:16px;} #song-list:first-child{
+																				   font-size: 18px;font-weight: bold;font-family: "PingFang SC","Microfoft yahei" !important;
+																			   }}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px;} #song-list:first-child{
+																				   font-size: 18px;font-weight: bold;font-family: "PingFang SC","Microfoft yahei" !important;
+																			   }}
+@media screen and (min-width:720px) and (max-width:750px){html{font-size:22.5px;}#song-list:first-child{
+																					 font-size: 20px;font-weight: bold;
+																					 font-family: "PingFang SC","Microfoft yahei" !important;}}
+@media screen and (min-width: 751px){
+	html{
+		font-size: 22.5px;
+	}
+	body{
+		max-width: 750px !important;
+		margin: 0 auto;
+	}
+	.view-container{
+		width:750px;
+	}
+	#song-list:first-child{
+		font-size: 20px;font-weight: bold;font-family: "PingFang SC","Microfoft yahei" !important;
+	}
+}
+body,button,h1, h2, h3, h4, h5, h6{
+	font-family: "PingFang SC","Microfoft yahei" !important;
+}
+*,html,body{margin: 0;padding: 0;}
+
+#audioPlay .ion-ios-arrow-left {
+    font-size: 24px;
+    background-color: transparent;
+}
+#containner {  position: fixed;  left: 0;
+	width:100%;  right:0; top: 45px;  border-bottom: 10px solid #F2F2F2;  background: white;  }
+
+#containner .song-pic {  width: 180px;  height: 180px;  border-radius: 50%;  margin: 0 auto;  background: url(images/disk.png) no-repeat center top;  background-size: 100% 100%; }
+
+#containner .song-pic img { position: relative;  display: block;  width: 88px;  height: 88px;  top: 45px;  left: 45px;  border-radius: 50%;  }
+#controlList {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0;
+}
+.padding-list{  top:343px;}
+
+#containner .song-pic .imgRotate {  -webkit-animation: imgRotate 8s linear infinite;  }
+
+@-webkit-keyframes imgRotate {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+i {  font-style: normal;  }
+
+#castList {  width: 70%;  margin: 0 auto;  }
+
+#castList .times {  width: 100%; padding-bottom: 5px;}
+
+.times .startTime {  float: left;  }
+
+.times .allTime {  float: right;  }
+
+#songInfo {  width: 100%;  margin: 0 auto;  border-radius: 4px;  }
+
+#containner-list {  width: 100%;  }
+
+#containner-list #song-list { width: 100%; margin: 0;  display: block;    height: 50px;  border-bottom: 1px solid #E1E1E1;  }
+
+#containner-list #song-list .listText { display: inline; color: #333333;  width: 100%;  height: 50px;   line-height: 50px;  }
+
+#containner-list #song-list img {  width: 50px;  height: 50px;  padding: 8px;  border-radius: 50%;  }
+
+#containner-list #song-list .showLogo {  display: none;  float: right;  margin-top: 15px;  margin-right: 15px;  width: 18px;  height: 18px;  background: url(images/showLogo.png) no-repeat center top;  background-size: 100% 100%;  }
+
+#castPercent {  width: 100%;  height: 3px;  margin: 5px auto;  margin-top: 5px;  text-align: center;  overflow: hidden;  background: #c1c1c1;  border-radius: 3px;  }
+
+#percent {  width: 0.1px;  height: 3px;  background: #666666;  border-radius: 3px;  border-top-left-radius: 3px;  border-bottom-left-radius: 3px;  position: absolute;  }
+
+.cricle {  width: 15px;  height: 15px;  border-radius: 50%;  background: url(images/cricle.png) no-repeat center;  position: relative;  top: -14px;  left: -10px;  }
+
+#songControl {  width:100%;  border-radius: 5px;  margin: 0 auto;  }
+
+#controlList {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0;
+}
+
+.button {
+	flex-grow: 1;
+	border: none;
+}
+
+#controlList #prevSong {
+	background: url(images/thelast.png) no-repeat center;
+	width: 40px;
+	height: 40px;
+	padding-top: 50px;
+	background-size: 26.7% 26.7%;
+}
+
+#controlList #toggle {
+	background: url(images/player.png) no-repeat center top;
+	width: 60px;
+	height: 60px;
+	background-size: 100% 100%;
+}
+
+#controlList #nextSong {
+	background: url(images/thenext.png) no-repeat center;
+	width: 40px;
+	height: 40px;
+	padding-top: 50px;
+	background-size: 26.7% 26.7%;
+}
+
+
+
+

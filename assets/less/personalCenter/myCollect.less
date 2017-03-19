@@ -1,0 +1,169 @@
+#myCollect{
+  background-color: #EDEDED;
+  .titles{
+    color: #0d0d0d;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    margin: 0 10px;
+    min-width: 30px;
+    height: 43px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 44px;
+  }
+  .canDelete{
+    position: absolute;
+    right: 12px;
+    bottom: 5px;
+    padding: 5px;
+    font-size:12px;
+    color: #0175ec;
+  }
+  .ion-ios-circle-outline{
+    color: #ccc;
+  }
+  .ion-ios-circle-filled{
+    color: #1075ec;
+  }
+  .contentList{
+    .item-content{
+      padding: 0;
+    }
+    .item{
+      border:none;
+      margin-bottom: 5px;
+    }
+    .button-icon.icon:before{
+      font-size: 24px;
+    }
+    .contentEveryone{
+      width: 100%;
+      height: 85px;
+      line-height: 1.5;
+      background-color: #ffffff;
+      padding: 12px;
+      display: -webkit-flex;
+      display: flex;
+      justify-content: space-between;
+      .contentLeft{
+        flex: 0 0 20%;
+        padding-right: 5%;
+        position: relative;
+        i{
+          display: block;
+          width: 25px;
+          height: 25px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: url(../img/icon_new.png) no-repeat;
+          background-size: 160px;
+        }
+        .iconShopping{
+          background-position:-68px -30px ;
+        }
+        .iconScenicSpot{
+          background-position:-102px -30px ;
+        }
+        .iconScenic{
+          background-position:-134px -30px ;
+        }
+        .iconTactic{
+          background-position:-134px -1px ;
+        }
+        img{
+          width: 62px;
+          height: 62px;
+          vertical-align: middle;
+          border-radius: 8px;
+        }
+      }
+      .contentRight{
+        flex: 1 1 80%;
+        width: 200px;
+        .contentRightTop{
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: nowrap;
+          align-items: center;
+          .shoppingName{
+            font-size: 15px;
+            color: #333333;
+            flex: 1 1 70%;
+            white-space: nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis
+          }
+          .time{
+            font-size: 12px;
+            color: #999999;
+            flex: 0 1 35%;
+            //padding-left: 10px;
+            white-space: nowrap;
+            text-align: right;
+          }
+        }
+        .contentRightBottom{
+
+          font-size: 12px;
+          color: #999999;
+          h5{
+            max-height: 38px;
+            overflow : hidden;
+            text-overflow: ellipsis;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            white-space: normal;
+            color: #999999;
+            font-size: 14px;
+          }
+        }
+        .scenicTitle{
+          h4{
+            font-size: 13px;
+            color: #808080;
+          }
+        }
+      }
+    }
+  }
+  .footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    background-color: #fff;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    .footerMiddle{
+      display: -webkit-flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 14px;
+      color: #333333;
+      .text{
+        flex: 1;
+        margin: 7px 0;
+        padding: 3px 0;
+        border-right: 1px solid #e0e0e0;
+        &:last-child{
+          border:none;
+        }
+      }
+    }
+  }
+
+}

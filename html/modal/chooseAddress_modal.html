@@ -1,0 +1,38 @@
+<ion-modal-view  id="chooseAddressModal">
+    <ion-header-bar align-title="center">
+        <h1 class="title">地址选择</h1>
+        <button class="button button-clear" ng-click="hideShow()">关闭</button>
+    </ion-header-bar>
+    <ion-content>
+       <div class="moreAddress">
+           <!-- 定位地址 -->
+           <div class="newAddress">
+               <h5>当前定位</h5>
+               <div  class="getAddress">
+                   <span>{{currentPosition || '定位失败,请手动选择'}}</span>
+               </div>
+           </div>
+           <!-- 热门城市 -->
+           <div class="hotCity">
+               <h5>热门城市</h5>
+               <div class="cityChoose" >
+                   <p ng-repeat="city in cityChoose" ng-click="getTravelNotes(city.name)">{{city.name}}</p>
+               </div>
+           </div>
+           <!-- 全国地址 -->
+           <div class="addressSelect">
+               <h5>选择城市</h5>
+               <div class="provinceAndCity" ng-class="{'borderBottom':!down}" ng-repeat=" address in addressSelect">
+                   <div class="province" ng-click="down = !down"><!--  ng-click="down = !down"-->
+                       <h3>{{address.proName}}</h3>
+                       <!-- 用ng-class -->
+                       <i ng-class="{ 'ion-chevron-down':!down ,'ion-chevron-up':down } " ></i>
+                   </div>
+                   <div class="list" ng-show="down"><!--ng-show="down"-->
+                       <div class="item" ng-repeat="city in address.citys" ng-click="getTravelNotes(city.name)" >{{city.name}}</div>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </ion-content>
+</ion-modal-view>

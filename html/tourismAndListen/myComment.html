@@ -1,0 +1,28 @@
+<ion-view id="myComment" view-title="我的点评">
+    <ion-header-bar align-title="center" class="header">
+        <div class="buttons left_btn">
+            <div class="buttons">
+                <button ng-click="$ionicGoBack()" class="button goback_icon">
+                </button>
+            </div>
+        </div>
+        <h1  class="title">
+            我的点评
+        </h1>
+        <div class="buttons">
+            <button class="button text_color_blue" type="button" ng-click="send()">
+                发送
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="myComment_wrap">
+        <form action="" id="addCommentForm">
+                <textarea ng-model="$parent.commentContent"
+                          name="content"
+                          id="content"
+                          class="textarea_com"
+                          placeholder="您可以发表文字描述来记录您的旅游过程，并且获得一定数量的游豆...">
+                </textarea>
+        </form>
+    </ion-content>
+</ion-view>

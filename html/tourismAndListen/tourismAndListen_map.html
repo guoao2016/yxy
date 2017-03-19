@@ -1,0 +1,61 @@
+<ion-view id="tourismAndListenMap" view-title="边游边听" cache-view="cache">
+  <ion-header-bar align-title="center" no-tap-scroll="false" class="header bar_coustom_header">
+      <div class="buttons left_btn">
+        <label>
+          <button class="button" ng-click="showModal()">{{cityName}}</button>
+          <i class="ion-ios-arrow-down"></i>
+        </label>
+      </div>
+      <h1 class="title">边游边听</h1>
+    </ion-header-bar>
+  <!--地图、列表切换按钮-->
+  <button type="button" class="switch_btn_list" ui-sref="tab.tourismAndListen.list"></button>
+  <ion-content scrollbar-y="false">
+    <!--高德地图-->
+    <section id="scenicContainer" ng-style="autoHeight">
+
+    </section>
+  </ion-content>
+  <!--下部轮播图-->
+  <div class="shop_intro_wrap area btn_fixed" id="slideBox" ng-show="showCards">
+    <ion-slides  options="options" slider="data.slider">
+      <ion-slide-page ng-repeat="item in scenicItem track by $index">
+        <div class="shop_intro">
+          <p class="distance" ng-if="!item.distance"></p>
+          <p class="distance" ng-if="item.distance">
+            <i class="ion-ios-location"></i>
+            距您
+            {{item.distance<1?item.distance*1000+'m':item.distance+'km'}}
+          </p>
+          <a class="bottom" ui-sref="tourismAndListen_detail({itemId:item.id})">
+            <div class="lt" ng-class="{ corner_mark:item.coupon }">
+              <img ng-src="{{domain}}{{item.thumb320?item.thumb320:item.thumbnail}}"  alt="">
+            </div>
+            <ul class="rt">
+              <li>{{item.title}}</li>
+              <li>{{item.spotCounts}}个景点语音讲解&nbsp;
+                {{item.level==0?'未评级景区':item.level+'A级景区'}}
+              </li>
+              <li>
+                 <span ng-if="item.vrUrl">
+                    VR模式导览 &nbsp;
+                 </span>
+                <span ng-if="item.ticketPrice">
+                  门票:{{item.ticketPrice}}元/人
+                </span>
+              </li>
+            </ul>
+            <span class="ion-ios-arrow-right"></span>
+          </a>
+        </div>
+      </ion-slide-page>
+    </ion-slides>
+  </div>
+
+  <!--<ul style="background-color: red;position: relative;z-index: 1000;left: 100px;">-->
+    <!--<li ng-repeat="item in ggg track by $index">-->
+      <!--{{item}}-->
+    <!--</li>-->
+  <!--</ul>-->
+  <!--<div ui-view=""></div>-->
+</ion-view>

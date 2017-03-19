@@ -1,0 +1,72 @@
+<ion-view id="scenicRecommend" view-title="景区推荐" cache-view="true">
+    <ion-header-bar align-title="center" class="header bar_coustom_header">
+        <div class="buttons left_btn">
+        </div>
+        <h1 class="title">景区推荐</h1>
+        <div class="buttons">
+            <button class="button search_icon" ui-sref="scenicSearch"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="scroll-content" lazy-scroll>
+        <div class="headerSlider">
+            <ion-slides class="headerSliderWrap" options="options" slider="data.slider">
+                <ion-slide-page ng-repeat="item in sliderItems">
+                    <a ui-sref="{{item.uiSref}}">
+                        <img ng-src="{{item.ngSrc}}">
+                    </a>
+                </ion-slide-page>
+            </ion-slides>
+        </div>
+        <nav class="row">
+            <div class="col" ng-repeat="item in navData">
+                <a ui-sref="{{item.state}}">
+                    <img ng-src="{{item.src}}">
+                </a>
+            </div>
+        </nav>
+
+
+        <!--最近景区-->
+        <section class="scenicRecommendMain" ng-if="hasNearscenic">
+            <div class="recommendPhoto" ui-sref="tourismAndListen_detail({itemId:nearscenicItem.id})">
+                <img image-lazy-src="{{DomainName}}{{nearscenicItem.thumb640?nearscenicItem.thumb640:nearscenicItem.thumbnail}}"
+                     image-lazy-loader="ios">
+                <p class="price"><span>{{nearscenicItem.spotCounts}}</span>个讲解点</p>
+                <span style="right:70px" ng-if="nearscenicItem.vrUrl" class="vr_logo"></span>
+                <i></i>
+                <p class="nearscenic"><img ng-src="assets/img/scenicRecommend/nearscenic.png" alt=""></p>
+                <button type="button" class="button music_btn"
+                        ng-click="$event.stopPropagation()"
+                        ui-sref="audioPlay({itemId:nearscenicItem.id})">
+                </button>
+            </div>
+            <h3>{{nearscenicItem.title}}</h3>
+            <h6><span>{{nearscenicItem.level>0 ? nearscenicItem.level+'A级' : '未评级'}}</span>景区</h6><!--3目运算，判断是否有评级-->
+        </section>
+        <div class="scenicRecommendMain" ng-repeat="item in scenicRecommendData track by $index">
+            <a ng-href="#/tourismAndListen_detail/{{item.scenicUuid}}">
+                <div class="recommendPhoto">
+                    <img image-lazy-src="{{DomainName}}{{item.thumb640}}"
+                         image-lazy-loader="ios">
+                    <p class="price"><span>{{item.spotCounts}}</span>个讲解点</p>
+                    <span ng-if="item.vrUrl" class="vr_logo"></span>
+                    <button type="button" class="button music_btn"
+                            ng-click="$event.stopPropagation()"
+                            ui-sref="audioPlay({itemId:item.scenicUuid})">
+                    </button>
+                    <!--<a type="button" class="button music_btn"-->
+                    <!--ng-click="$event.stopPropagation()"-->
+                    <!--href="html/test-work/index.html">-->
+                    <!--</a>-->
+                </div>
+                <h3>{{item.title}}</h3>
+                <h6><span>{{item.level ? item.level+'A级' : '未评级'}}</span>景区</h6><!--3目运算，判断是否有评级-->
+            </a>
+        </div>
+        <!-- noMoreData是后台定义是否还有更多数据加载的状态 -->
+        <ion-infinite-scroll ng-if="!noMoreData"
+                             on-infinite="loadMoreScenicRecommendData()"
+                             immediate-check="false">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

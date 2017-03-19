@@ -1,0 +1,87 @@
+<ion-view id="search" view-title="搜索" cache-view="true">
+    <div class="header">
+        <div class="headTitle">
+            <div class="titleLeft" ng-click="$ionicGoBack()">
+                <i class="ion-ios-arrow-left"></i>
+            </div>
+            <div class="titleMiddle">
+                <label for="searchVal">
+                    <i class="ion-ios-search-strong"></i>
+                </label>
+                <input type="search" ng-model="searchVal" maxlength="6" id="searchVal" placeholder="搜索..." autofocus>
+                <button ng-disabled="!searchVal" ng-click="clickKeywords(item,1)">搜索</button>
+            </div>
+        </div>
+        <div class="searchDetail">
+            <div class="searchHistory">
+                <span>搜索历史</span>
+                <i class="ion-ios-trash-outline" ng-click="clearHistoryData()"></i>
+            </div>
+            <div class="searchContent" >
+                <span  ng-repeat="item in historyData" ng-click="clickKeywords(item,0)">{{item}}</span>
+            </div>
+        </div>
+    </div>
+
+    <ion-content delegate-handle="scenicSearchList" on-scroll="scrollChooseContainer()" lazy-scroll>
+        <!--<ion-list ng-show="hasMoreData" class="tourisem_listen" >
+            <ion-item ng-repeat="item in allSearchData | filter:enabled" class="scenery_box"
+                      ng-href="#/tourismAndListen_detail/{{item.scenicUuid}}">
+                <div class="img-bg">
+                    <img  image-lazy-src="http://tourism.yxzhy.cc{{item.thumbnail}}" image-lazy-loader="lines">
+                </div>
+                <div class="img-bg-shadow">-->
+                    <!--<span ng-if="item.ticketPrice" class="price">门票：{{item.ticketPrice}}元/人</span>-->
+                    <!--<span ng-if="item.vrUrl" class="vr_logo"></span>-->
+                    <!--<div class="info">
+                        <h4 class="s-title">{{item.title}}</h4>
+                        <p class="detail">
+                            <span>{{item.level != 0 ? item.level+'A' : '未评'}}级景区</span>
+                            <span> - {{item.spotCounts}}个景点 </span>
+                        </p>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>-->
+	      <ul>
+	      <li ng-repeat="item in allSearchData | filter:enabled"
+	                class="scenery_box tourisem_listen"
+	               ui-sref="tourismAndListen_detail({itemId:item.scenicUuid})">
+	        <div class="img_bg img_bo" >
+	          	<img image-lazy-src="http://tourism.yxzhy.cc{{item.thumbnail}}"
+	               image-lazy-loader="lines">
+	          <!--<span ng-if="item.ticketPrice" class="price">门票：{{item.ticketPrice}}元/人</span>-->
+	          
+	          <!--<button type="button" class="button music_btn"-->
+	                  <!--ng-click="goToMusic($event)"-->
+	                  <!--ui-sref="audioPlay({itemId:item.id})"></button>-->
+	            <p class="price"><span>{{item.spotCounts}}</span>个讲解点</p>
+	          	<span ng-if="item.vrUrl" class="vr_logo"></span>
+	          	<a type="button" class="button music_btn"
+	                  ng-click="$event.stopPropagation()"
+	                  href="html/test-work/index.html">
+	          </a>
+	        </div>
+	        <div class="img_info">
+	            <h4 class="title">{{item.title}}</h4>
+	            <p class="detail">
+	              <span>{{item.level==0?'未评':item.level+'A'}}级景区</span>
+	              <span> - {{item.spotCounts}}个景点 </span>
+	              <span ng-if="item.distance"> - 距您
+	                {{item.distance>1?item.distance+'公里':item.distance*1000+'米'}}
+	              </span>
+	            </p>
+	        </div>
+	      </li>
+	    </ul>
+        
+        
+        
+        
+        <div ng-show="!hasMoreData" class="noMoreData">
+            <img ng-src="assets/img/noMoreData.png" alt="">
+            <h3 >没有找到相关内容!</h3>
+        </div>
+        <ion-infinite-scroll ng-if="pageCount > page" on-infinite="getSearchData(item,true)" immediate-check="false" ></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

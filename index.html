@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--<html manifest="tourism.manifest">-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=4, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--全屏-->
+    <meta name="apple-mobile-web-app-status-style" content="black-translucent"><!--隐藏状态栏-->
+    <meta name="format-detection" content="telephone=no"><!--忽略数字自动识别为电话号码-->
+    <meta name="format-detection" content="email=no">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <title>印象游</title>
+
+    <!-- 公共css -->
+    <link href="assets/lib/ionic/css/ionic.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/audio.css"/>
+    <!-- 第三方插件css -->
+    <!--轮播图插件swiper-->
+    <link rel="stylesheet" href="assets/lib/swiper/dist/css/swiper.min.css">
+    <!--高德地图-->
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css">
+
+    <script src="assets/lib/jquery/dist/jquery.min.js"></script>
+    <!-- ionic/angularjs js -->
+    <script src="assets/lib/ionic/js/ionic.bundle.min.js"></script>
+    <script src="assets/lib/ionic/js/angular/angular-sanitize.min.js"></script>
+
+    <!--全局js -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/route.js"></script>
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/config.js"></script>
+
+    <!-- tab虚拟路由js -->
+    <script src="html/tab/tab_route.js"></script>
+    <script src="html/tab/tab_controller.js"></script>
+
+    <!-- 功能模块js-->
+    <!-- 主页js -->
+    <script src="html/scenicRecommend/scenicRecommend_route.js"></script>
+    <script src="html/scenicRecommend/scenicRecommend_controller.js"></script>
+
+    <!-- 景区推荐js -->
+    <script src="html/tourismAndListen/tourimAndListen_route.js"></script>
+    <script src="html/tourismAndListen/tourimAndListen_controller.js"></script>
+    <script src="html/tourismAndListen/tourimAndListen_service.js"></script>
+
+    <!-- 游记攻略js -->
+    <script src="html/travelNotes/travelNotes_route.js"></script>
+    <script src="html/travelNotes/travelNotes_controller.js"></script>
+
+    <!-- 个人中心js -->
+    <script src="html/personalCenter/userCenter_route.js"></script>
+    <script src="html/personalCenter/userCenter_controller.js"></script>
+    <script src="html/personalCenter/myInfo_controller.js"></script>
+    <script src="html/personalCenter/myNotes_controller.js"></script>
+
+    <!-- 搜索功能js -->
+    <script src="html/search/search_route.js"></script>
+    <script src="html/search/travelNotesSearch_controller.js"></script>
+    <script src="html/search/scenicSearch_controller.js"></script>
+
+    <!--登录、注册、找回密码-->
+    <script src="html/login/loginAll_route.js"></script>
+    <script src="html/login/loginAll_controller.js"></script>
+
+    <!--新游记-->
+    <script src="html/myTravel/myTravel_controller.js"></script>
+    <script src="html/myTravel/myTravle_route.js"></script>
+    <!--我的信息-->
+    <script src="html/myMessage/myMessage_controller.js"></script>
+    <script src="html/myMessage/myMessage_route.js"></script>
+
+    <!--语音播报-->
+    <script src="html/audioPlay/audioPlay_controller.js"></script>
+    <script src="html/audioPlay/audioPlay_route.js"></script>
+    <!-- 第三方插件js -->
+    <!--轮播图插件swiper-->
+    <script src="assets/lib/swiper/dist/js/swiper.min.js"></script>
+    <!--图片预加载lazyImageLoading-->
+    <script src="assets/lib/ionic-image-lazy-load/ionic-image-lazy-load.js"></script>
+    <script src="assets/lib/web-storage-cache.js"></script>
+    <!--高德地图	-->
+    <!--<script src="http://webapi.amap.com/maps?v=1.3&key=92a659f5110a4ae28f9acbeaceba0815"></script>-->
+    <script src="http://webapi.amap.com/maps?v=1.3&amp;key=a7ae138b802953aba974d7e3e29c9bef&amp;plugin=AMap.CitySearch,AMap.Geocoder"></script>
+    <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+
+    <!--weui-->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/weui/0.4.3/style/weui.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/jquery-weui/0.8.3/css/jquery-weui.min.css">
+    <script src="http://cdn.bootcss.com/jquery-weui/0.8.3/js/jquery-weui.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery-weui/0.8.3/js/city-picker.min.js"></script>
+    <!--图片缩放-->
+    <!--<script src="assets/lib/pinchzoom/pinchzoom.js"></script>-->
+</head>
+<body ng-app="starter">
+<ion-nav-view></ion-nav-view>
+</body>
+</html>

@@ -1,0 +1,121 @@
+#travelNotes{
+  .travelNotesContent{
+    background-color: #ededed;
+    .getDataError{
+      font-size: 18px;
+      color: #ffa931;
+      text-align: center;
+      padding-top: 5em;
+    }
+    .firstNotes{
+      position: relative;
+      height: 200px;
+      img{
+        height: 200px;
+        position: relative;
+        left: 0;
+        top: 0;
+      }
+      .moreMessage{
+        position: absolute;
+        bottom:  0;
+        left: 0;
+        right: 0;
+        padding: 0 10px;
+        background: -webkit-gradient(linear,left bottom,left top,from(#0f0f0f),color-stop(rgba(15,15,15,.5)),to(rgba(15,15,15,0)));
+        background: -webkit-linear-gradient(bottom,#0f0f0f,rgba(15,15,15,.5),rgba(15,15,15,0));
+        background: linear-gradient(to top,#0f0f0f,rgba(15,15,15,.5),rgba(15,15,15,0));
+        color: #fff;
+        .title{
+          word-break: keep-all;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          position: relative;
+          color: #FFFFFF;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        .tips{
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          font-size: 12px;
+          .lt-tips{
+            width: 170px;
+            color: #aaa;
+            line-height: 26px;
+            word-break: keep-all;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          .rt-tips{
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            text-align: right;
+            position: relative;
+            display: inline-block;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .othersNotes{
+      padding: 10px 12px;
+      .notes-list{
+        height: 100px;
+        background-color: #fff;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        border-bottom: 1px solid #eee;
+        .notes-item{
+          display: -webkit-flex;
+          display: flex;
+          justify-content: space-between;
+          .item-left{
+            width: 100px;
+            height: 100px;
+            //flex:0 0 30%;
+          }
+          .item-right{
+            flex: 1;
+            margin-left: 10px;
+            //display: -webkit-flex;
+            //display: flex;
+            //flex-direction: column;
+            //justify-content: space-between;
+            position: relative;
+            h4{
+              //width: 90%;
+              font-size: 16px;
+              color: #333;
+              margin-top: 10px;
+              margin-bottom: 2px;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            }
+            .otherSummary{
+              font-size: 13px;
+              color: #999;
+              padding-right: 5px;
+            }
+            .orIcon{
+              position: absolute;
+              bottom: 5px;
+              right: 12px;
+              color: #999;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

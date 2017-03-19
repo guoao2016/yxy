@@ -1,0 +1,34 @@
+<ion-view id="travelDetail">
+    <!--    title   -->
+    <ion-header-bar align-title="center" class="header bar_coustom_header">
+        <div class="buttons left_btn">
+            <div class="buttons">
+                <button class="button goback_icon" ng-click="$ionicGoBack()"></button>
+            </div>
+        </div>
+        <h1 class="title">攻略详情</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="main_title">
+            <h3>{{detailDatas.title}}</h3>
+            <div class="sub_title">
+                <i></i>
+                <span>{{detailDatas.summary}}</span>
+            </div>
+        </div>
+        <div class="main_content" ng-bind-html="detailDatas.content"></div>
+    </ion-content>
+    <!-- footer -->
+    <div class="bar bar-footer travelDetail_footer">
+        <div class="left" ng-click="judgeIfDot()">
+            <span class="logo " ng-class="{'logo_no':!dotState,'logo_has':dotState}"></span>
+            <span class="number" >{{detailDatas.upvoteCounts}}</span>
+        </div>
+        <div class="right" ng-click="judgeIfCollect()">
+            <span class="logo" ng-class="{'logo_no':!collectState,'logo_has':collectState}"></span>
+        </div>
+    </div>
+</ion-view>
+
+
+

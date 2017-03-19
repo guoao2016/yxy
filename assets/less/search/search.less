@@ -1,0 +1,306 @@
+#search,#travelNotesSearch{
+  @top:160px;
+  //@top:`document.getElementsByClassName('header')[0].height`;
+  .deleteTop{
+    top: 0 !important;
+    transition: 1s;
+  }
+  .addTop{
+    top: @top;
+    transition: 0.5s;
+  }
+  .header{
+    background-color: #FFFFFF;
+    //height: @top;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    .headTitle{
+      height: 44px;
+      width: 100%;
+      padding: 5px 0;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      .titleLeft{
+        width: 25px;
+        height: 35px;
+        margin-right: 5px;
+        line-height: 35px;
+        .ion-ios-arrow-left{
+          font-size: 24px;
+          color: #0179F4;
+        }
+      }
+      .titleMiddle{
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 400;
+        width: 90%;
+        height: 35px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        line-height: 35px;
+        top: 10px;
+        .ion-ios-search-strong{
+          color: #0179F4;
+          font-size: 20px;
+          padding:0 8px;
+        }
+        input{
+          width: 70%;
+          height: 28px;
+          font-size: 16px;
+          line-height: 28px;
+        }
+        button{
+          background-color: #fff;
+          border-left: 1px solid #ccc;
+          color: #999;
+          padding: 0 8px;
+        }
+      }
+    }
+    .searchDetail{
+      padding-top: 8px;
+      .searchHistory{
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-between;
+        color: #666;
+        span{
+          font-size: 14px;
+        }
+        .ion-ios-trash-outline{
+          font-size: 20px;
+          width: 25px;
+          height: 25px;
+          text-align: center;
+        }
+      }
+      .searchContent{
+        display: -webkit-flex;
+        display: flex;
+        flex-wrap: wrap;
+        //justify-content: space-between;
+        padding-top: 8px;
+        span{
+          flex: 0 0 31%;
+          font-size: 14px;
+          color: #999;
+          padding: 2px;
+          border: 1px solid #ccc;
+          margin-bottom: 8px;
+          -webkit-border-radius:8px;
+          -moz-border-radius:8px;
+          border-radius:8px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          text-align: center;
+          margin-right: 2%;
+        }
+      }
+    }
+  }
+  .scroll-content{
+    top:@top;
+    background-color: #ededed;
+    .list{
+      .item{
+        height: 100px;
+        margin-top: 5px;
+        -webkit-border-radius:8px;
+        -moz-border-radius:8px;
+        border-radius:8px;
+      }
+    }
+  }
+  .errorAlert{
+    font-size: 16px;
+    color: #F19504;
+    text-align: center;
+    margin-top: 10em;
+  }
+  .tourisem_listen{
+    background-color: #fff;
+//  .list{
+//    .scenery_box{
+        display: block;
+        margin:0;
+        margin-top: 5px;
+        padding:0;
+//      height:175px;
+        width: 100%;
+//      position: relative;
+        overflow: hidden;
+//      a.item-content{
+//        height:175px;
+//        padding:0;
+          //图片层
+          .img_bo {
+              position: relative;
+              height: 175px;
+            img {
+              width: 100%;
+              height: 175px;
+              vertical-align: bottom;
+            }
+          }
+          //图片下文字
+          .img_info {
+            width: 100%;
+            padding: 6px 12px;
+            .title {
+              font-size: 16px;
+              color: #333;
+              font-weight: 600;
+            }
+            .detail {
+              font-size: 13px;
+              color: #808080;
+            }
+    
+          }
+          //图片上文字
+          .img-bg-shadow{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: rgba(0, 0, 0, .2);
+            .info {
+              position: absolute;
+              left: 0;
+              right: 0;
+              height: 150px;
+              padding: 0;
+              top: 50%;
+              z-index: 30;
+              margin-top: -56px;
+              box-sizing: border-box;
+              text-align: center;
+              border: 0!important;
+              text-shadow: 1px 1px 2px #000;
+              overflow: hidden;
+              .s-title {
+                bottom: 19px;
+                left: 12px;
+                font-size: 17px;
+                font-weight:600;
+                margin-top: 36px;
+                color: #fff;
+              }
+              .detail{
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 34px;
+                font-size: 14px;
+                color: #fff;
+              }
+            }
+          }
+//      }
+
+//    }
+
+
+//  }
+  }
+  .othersNotes{
+    padding: 10px 12px;
+    .notes-list{
+      height: 100px;
+      background-color: #fff;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      border-bottom: 1px solid #eee;
+      .notes-item{
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-between;
+        .item-left{
+          width: 100px;
+          height: 100px;
+          flex:0 0 30%;
+        }
+        .item-right{
+          flex: 1;
+          margin-left: 10px;
+          //display: -webkit-flex;
+          //display: flex;
+          //flex-direction: column;
+          //justify-content: space-between;
+          position: relative;
+          h4{
+            //width: 90%;
+            font-size: 16px;
+            color: #333;
+            margin-top: 10px;
+            margin-bottom: 2px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+          }
+          .otherSummary{
+            font-size: 13px;
+            color: #999;
+            padding-right: 5px;
+          }
+          .orIcon{
+            position: absolute;
+            bottom: 5px;
+            right: 12px;
+            color: #999;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

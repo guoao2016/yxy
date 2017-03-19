@@ -1,0 +1,334 @@
+//新游记列表
+//列表详情共用样式
+.myTravel{
+  .praise{
+    i{
+      display: inline-block;
+      width:20px;
+      height:20px;
+      position: relative;
+      top:7px;
+      background:url(../img/icon_new.png) no-repeat -136px -57px;
+      background-size:150px;
+    }
+    &.praised{
+      i{
+        background-position:-136px -79px;
+      }
+    }
+  }
+  .comment{
+    i{
+      display: inline-block;
+      width:20px;
+      height:20px;
+      position: relative;
+      top:7px;
+      background:url(../img/icon_new.png) no-repeat -70px -140px;
+      background-size:150px;
+    }
+  }
+  .info{
+    button{
+      display: inline-block;
+      width:45px;
+      height:25px;
+      margin-top:10px;
+      background-color:#fff;
+      border:1px solid #ccc;
+      border-radius: 3px;
+      color:#fe8d00;
+      &.ion-ios-checkmark-empty{
+        width:60px;
+        color:#999;
+      }
+    }
+  }
+  //自己发表的游记样式
+  .current_user{
+    height: 30px;
+    padding: 0 12px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;
+    line-height: 30px;
+    color: #999;
+    font-size: 14px;
+    .open{
+      display: inline-block;
+      width:20px;
+      height:20px;
+      position: relative;
+      top:7px;
+      //margin-left:38px;
+      background:url(../img/icon_new.png) no-repeat;
+      background-size:150px;
+      background-position:-119px -139px;
+      &.close{
+        background-position:-135px -139px;
+      }
+    }
+    .action_list{
+      position: absolute;
+      z-index: 20;
+      left:0;
+      right:0;
+      text-align: center;
+      li{
+        height:50px;
+        line-height:50px;
+        font-size: 15px;
+        color:#333;
+        &:nth-child(2){
+          border:1px solid #e0e0e0;
+          border-left:0;
+          border-right:0;
+        }
+        &:nth-child(3){
+          color:#e64340;
+        }
+      }
+    }
+  }
+  //底部举报、评论
+  .footer{
+    height:35px;
+    padding:0;
+    ul{
+      display: flex;
+      height:35px;
+      align-items: center;
+      li{
+        flex:1;
+        text-align: center;
+        font-size:13px;
+        color:#999;
+        &:first-child{
+          i{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 7px;
+            background: url(../img/icon_new.png) no-repeat -92px -158px;
+            background-size: 150px;
+          }
+        }
+        &:nth-child(2){
+          border:1px solid #e6e6e6;
+          border-top:none;
+          border-bottom:none;
+          i{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 7px;
+            background: url(../img/icon_new.png) no-repeat -70px -158px;
+            background-size: 150px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+#myTravelList{
+  .header{
+    border-bottom: 1px solid #ddd;
+    .buttons{
+      background-color:#fff;
+      &.left_btn{
+        .ion-ios-arrow-left{
+          font-size: 24px;
+          background: #fff;
+        }
+      }
+      &.right_btn{
+        .button{
+          color:#0175ec;
+          background-color:#fff;
+        }
+      }
+    }
+  }
+  .select_city{
+    position: absolute;
+    z-index: 10;
+    top: 44px;
+    left: 0;
+    right: 0;
+    padding: 0 12px;
+    text-align: center;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
+    li{
+      height: 50px;
+      line-height: 50px;
+      background-color:#fff;
+      font-size:15px;
+      color:#333;
+      &:first-child{
+        border-bottom: 1px solid #e0e0e0;
+      }
+    }
+  }
+  .main_content{
+
+  }
+  .wrap{
+
+  }
+
+  //图标样式
+  .ion-ios-checkmark-empty{
+    &:before{
+      margin: 0 1px;
+      font-size: 18px;
+    }
+  }
+}
+
+
+//游记列表共用样式
+.discern {
+  display: flex;
+  padding: 10px 12px 4px;
+  align-content: flex-start;
+  background-color: #fff;
+  border-bottom: 10px solid #ededed;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .user_logo {
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+  .detail {
+    flex: 1;
+    margin-top: 2px;
+    margin-left: 3%;
+    .info {
+      display: flex;
+      justify-content: space-between;
+      .left {
+        p {
+          &:first-child {
+            font-size: 14px;
+            color: #333;
+          }
+          &:last-child {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #999;
+          }
+        }
+      }
+      button {
+        display: inline-block;
+        width: 45px;
+        height: 25px;
+        margin-top: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        color: #fe8d00;
+        &.ion-ios-checkmark-empty {
+          width: 60px;
+          color: #999;
+        }
+      }
+    }
+    .text {
+      margin-top: 12px;
+      word-break: break-all;
+      .seeMore{
+        margin-top:6px;
+        font-size:15px;
+        color:#406599;
+      }
+    }
+    .photos {
+      flex-wrap: wrap;
+      padding: 0;
+      margin-top: 18px;
+      .col {
+        flex:0 0 32%;
+        padding: 0;
+        margin-bottom: 5px;
+        overflow: hidden;
+        background-position: center center;
+        background-repeat: no-repeat;
+        &:nth-child(3n+2) {
+          margin:0 2%;
+        }
+        img {
+          width:100%;
+          //height: 100%;
+
+        }
+
+      }
+    }
+    .one_photo {
+      display: flex;
+      align-items: center;
+      max-width: 200px;
+      max-height: 300px;
+      margin-top: 18px;
+      overflow: hidden;
+    }
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 18px;
+      color: #7e98c8;
+      li {
+        &:first-child {
+          .praise {
+            i {
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              position: relative;
+              top: 7px;
+              background: url(../img/icon_new.png) no-repeat -136px -57px;
+              background-size: 150px;
+            }
+            &.praised {
+              i {
+                background-position: -136px -79px;
+              }
+            }
+          }
+          .comment {
+            i {
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              position: relative;
+              top: 7px;
+              margin-left: 38px;
+              background: url(../img/icon_new.png) no-repeat -70px -139px;
+              background-size: 150px;
+            }
+          }
+        }
+        &:last-child {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          position: relative;
+          top: 7px;
+          background: url(../img/icon_new.png) no-repeat -96px -140px;
+          background-size: 150px;
+        }
+      }
+    }
+  }
+}

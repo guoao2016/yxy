@@ -1,0 +1,92 @@
+<ion-view id="myInfo" view-title="我的资料" cache-view="true">
+    <ion-header-bar align-title="center" class="header bar_coustom_header">
+        <div class="buttons left_btn">
+            <button class="button button_fff" ng-click="$ionicGoBack()">取消</button>
+        </div>
+        <h1 class="title"></h1>
+        <div class="buttons right_btn">
+            <button class="button  button_fff"
+                    type="button"
+                    ng-click="updateUserInfo()">
+                保存
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="wrap">
+            <!--头像-->
+         <div class="user_logo">
+                <img ng-src="{{userInfo.icon}}" alt="" id="icon">
+                <i></i>
+                <input class="upload" type="file" id="uploadIcon" ng-click="upload">
+
+            </div>
+         <form  id="userForm">
+                <input type="hidden" name="icon" id="base64Icon">
+                <input type="hidden" name="token" value="{{token}}">
+                <ul>
+                    <li>
+                        <label>
+                            <span>昵称：</span>
+                            <input type="text" maxlength="8"
+                                   readonly
+                                   id="name"
+                                   name="nick"
+                                   ng-model="nick"
+                                   ng-value="userInfo.nick"
+                                   ui-sref="myNick"
+                                   placeholder="请输入昵称">
+
+                              <i class="ion-ios-arrow-right"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <span>性别：</span>
+                            <input type="text"  name="gender"  id="gender"
+                                   ng-value="userInfo.gender"
+                                   placeholder="请选择性别">
+                            <i class="ion-ios-arrow-right"></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <span>地址：</span>
+                            <input type="text"   id="cityPicker"  name="address"
+                                   placeholder="请选择地址"
+                                   ng-value="userInfo.address">
+                            <i class="ion-ios-arrow-right"></i>
+                        </label>
+
+                    </li>
+                    <!--日期写在label中无法弹出选择框-->
+                    <li>
+                        <span>生日：</span>
+                        <input type="text"  id="timePicker"
+                                   placeholder="请选择日期"
+                                   name="birthday"
+                                   ng-value="userInfo.birthday">
+                        <i class="ion-ios-arrow-right"></i>
+                    </li>
+                </ul>
+            </form>
+    </ion-content>
+    <script type="text/javascript">
+                $("#cityPicker").cityPicker({
+                    title: "请选择地址"
+                });
+                $("#timePicker").calendar({
+                    value:["2017-01-12"],
+                    dateFormat: "yyyy-mm-dd",
+                    monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+                        '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                    monthNamesShort: ['一月', '二月', '三月', '四月', '五月', '六月',
+                        '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                    minDate: "1949-01-01",
+                    maxDate: new Date()
+                });
+                $("#gender").select({
+                    title: "选择性别",
+                    items: ["男","女","保密"]
+                });
+            </script>
+</ion-view>

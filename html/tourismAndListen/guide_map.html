@@ -1,0 +1,50 @@
+<!--景区攻略-->
+<ion-view id="guideMap" view-title="景区导览图" cache-view="true">
+    <ion-header-bar align-title="center" class="header bar_coustom_header">
+        <div class="buttons left_btn">
+            <!--返回-->
+            <div class="buttons">
+                <button ng-click="$ionicGoBack()" class="button goback_icon"></button>
+            </div>
+        </div>
+        <h1 class="title">导览图</h1>
+
+    </ion-header-bar>
+<!------------pinchzoom----------->
+    <!--<div class="pinch-zoom">-->
+        <!--<img ng-src="{{itemMapsImage}}" alt="">-->
+    <!--</div>-->
+    <!--<script>-->
+        <!--$(function () {-->
+            <!--$('div.pinch-zoom').each(function () {-->
+                <!--new RTP.PinchZoom($(this), {});-->
+            <!--});-->
+        <!--})-->
+    <!--</script>-->
+
+
+    <!-----------swiper Android体验差，ios良好------------------->
+    <!-- main -->
+    <ion-content>
+        <section class="area_guide">
+            <div class="swiper-container swiper-container-horizontal guide_map">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" >
+                <div class="swiper-zoom-container" >
+                    <img ng-src="{{itemMapsImage}}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+        </section>
+    </ion-content>
+    <script language="javascript">
+        var mySwiper = new Swiper('.guide_map',{
+            zoom : true,
+        })
+    </script>
+</ion-view>
+
+
+
+

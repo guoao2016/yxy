@@ -1,0 +1,102 @@
+<ion-view id="myTravelReply"  class="myTravel" view-title="详情" cache-view="true">
+    <ion-header-bar align-title="center" class="header">
+        <div class="buttons left_btn">
+            <button ng-click="$ionicGoBack()" class="button ion-ios-arrow-left"></button>
+        </div>
+        <h1  class="title">详情</h1>
+    </ion-header-bar>
+    <ion-content>
+        <!--上部游记评论-->
+        <section class="detail_comment">
+            <ul>
+                <li>
+                    <!--用户信息-->
+                    <div class="user_logo">
+                        <img ng-src={{commentItem.icon}} alt="">
+                    </div>
+                    <div class="detail">
+                        <div class="top">
+                            <div class="left">
+                                <p>{{commentItem.nick}}</p>
+                            </div>
+                            <!--游记评论点赞-->
+                            <button type="button" class="praise"
+                                    ng-click="thumbUp($event)"
+                                    ng-class="{'praised':!ifDot}">
+                                <i></i>{{commentItem.favor>0?commentItem.favor:''}}
+                            </button>
+                            <!--<likelite number="commentItem.favor" id="commentItem.id"></likelite>-->
+                        </div>
+                        <div class="text">
+                            {{commentItem.content}}
+                        </div>
+                        <div class="bottom">
+                            {{commentItem.createTime*1000 | date:"MM-dd HH:mm"}}&nbsp
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </section>
+        <!--下部游记回复评论列表-->
+        <section class="detail_reply" ng-if="replyItems.length>0">
+            <h3>全部评论</h3>
+            <ul>
+                <li ng-repeat="replytItem in replyItems track by $index">
+                    <!--用户信息-->
+                    <div class="user_logo">
+                        <img ng-src={{replytItem.icon}} alt="">
+                    </div>
+                    <div class="detail">
+                        <div class="top">
+                            <div class="left">
+                                <p>{{replytItem.nick}}</p>
+                            </div>
+                            <likelite number="replytItem.favor" id="replytItem.id"></likelite>
+                        </div>
+                        <div class="text">
+                            {{replytItem.content}}
+                        </div>
+                        <div class="bottom">
+                            {{replytItem.createTime*1000 | date:"MM-dd HH:mm"}}&nbsp;-&nbsp;
+                            <!--<button ui-sref="myTravelReply({itemId:commentItem.id})" type="button">回复</button>-->
+                            <!--自定义指令回复-->
+
+                            <reply ng-if="replytItem.userId!=userId"
+                                   token="token"
+                                   id="replytItem.id"
+                                   nick="replytItem.nick"
+                                   content="replytItem.content"
+                                   pid="replytItem.pid">
+                            </reply>
+                            <!--自己发的-->
+                            <div ng-show="replytItem.userId==userId" class="delete_wrap">
+                                <deletecomment token="token" id="replytItem.id">
+                                </deletecomment>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </section>
+    </ion-content>
+    <ion-footer-bar class="footer">
+        <ul>
+            <li ng-click="report($event)"><i></i>举报</li>
+            <li ng-click="writeComment()"><i></i>写评论</li>
+            <li>
+                <!--自定义指令---点赞-->
+                <!--<likelite number="commentItem.favor" id="commentItem.id"></likelite>-->
+                <button type="button" class="praise"
+                        ng-click="thumbUp($event)"
+                        ng-class="{'praised':!ifDot}">
+                    <i></i>{{commentItem.favor>0?commentItem.favor:''}}
+                </button>
+            </li>
+        </ul>
+    </ion-footer-bar>
+</ion-view>
+
+
+

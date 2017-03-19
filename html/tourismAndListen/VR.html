@@ -1,0 +1,30 @@
+<!--景区攻略-->
+<ion-view id="guideMap" view-title="VR/实景" cache-view="false">
+    <ion-header-bar align-title="center" class="header bar_coustom_header">
+        <div class="buttons left_btn">
+            <!--返回-->
+            <div class="buttons">
+                <button ng-click="$ionicGoBack()" class="button goback_icon"></button>
+            </div>
+        </div>
+        <h1 class="title">VR/实景</h1>
+    </ion-header-bar>
+    <ion-content>
+        <!--<iframe id="vrWrap"  ng-style="autoHeight" style="width:100%;"-->
+                <!--src="http://www.quanjingke.com/jq/m/1481"-->
+                <!--frameborder="0">-->
+        <!--</iframe>-->
+        <iframe ng-show="successGetData" id="vrWrap"  style="width:100%;"
+                ng-src={{scevrurl}}
+                frameborder="0">
+        </iframe>
+    </ion-content>
+    <div ng-show="!successGetData" class="dataFly">
+        <img ng-src="assets/img/dataFly.png" alt="">
+        <h3>数据建设中!</h3>
+    </div>
+</ion-view>
+
+
+
+

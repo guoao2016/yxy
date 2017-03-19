@@ -1,0 +1,83 @@
+<ion-view id="myNotesEdit" view-title="写游记" cache-view="false">
+    <ion-header-bar align-title="center" class="header bar_coustom_header">
+        <div class="buttons left_btn">
+            <div class="buttons">
+                <button class="button goback_icon" ng-click="$ionicGoBack()"></button>
+            </div>
+        </div>
+        <h1 class="title">印象游记</h1>
+        <div class="buttons right_btn">
+            <div class="buttons">
+                <button class="button" id="btnForm" ng-click="btnForm()">
+                    发布
+                </button>
+            </div>
+        </div>
+    </ion-header-bar>
+    <ion-content class="content" scrollbar-y="false">
+        <form id="uploadForm"  class="form-my-com" enctype="multipart/form-data" ng-init="openMode='true'">
+            <input type="hidden" name="token" ng-value="token">
+            <input type="hidden" name="open" ng-value="openMode">
+            <div class="ct-inputBox ct-inputBox-com">
+                <textarea ng-model="content" name="content"  class="weui_textarea textarea_com"
+                          placeholder="写游记，分享行程好风景吗，与大家一起互动吧"></textarea>
+
+
+                <div class="weui_cell weui_cell_com">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <div class="weui_uploader">
+                            <!--<upload token="token"></upload>-->
+                            <div class="weui_uploader_bd">
+                                <!--图片展示-->
+                                <ul  id="preview" class="layer-photos-demo weui_uploader_files">
+
+                                </ul>
+                                <!--图片上传-->
+                                <div class="weui_uploader_input_wrp">
+
+                                    <input id="fileImage"
+                                           class="weui_uploader_input"
+                                           type="file"
+                                           accept="image/*;capture=camera">
+                                            <!--multiple>-->
+                                            <!--上传多张-->
+                                </div>
+                            </div>
+
+                            <!--<div id="progressNumber"></div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--地址-->
+            <div class="address_label" ng-click="showModal()">
+                <i class="ion-ios-location"></i>
+                <input class="userAddress" type="text"
+                       name="address"
+                       readonly
+                       placeholder={{placeholder}}
+                       ng-model="$parent.currentCity"
+                       ng-value="currentCity">
+                <i class="ion-ios-arrow-right"></i>
+            </div>
+            <!--是否公开-->
+            <ion-toggle class="open_label"
+                        ng-click="openMode=!openMode"
+                        ng-checked="true"
+                        toggle-class="toggle-calm">
+                    是否公开
+            </ion-toggle>
+
+        </form>
+    </ion-content>
+    <script>
+
+        function autoHeight(){
+            var width=$('#preview li').width();
+            $('#preview li').height(width);
+            $('.weui_uploader_input_wrp').width(width).height(width);
+        }
+        setInterval(autoHeight,500)
+    </script>
+
+</ion-view>

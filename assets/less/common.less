@@ -1,0 +1,437 @@
+
+@media screen and (min-width:320px) and (max-width:374px){html{font-size:12px}}
+@media screen and (min-width:375px) and (max-width:413px){html{font-size:14px}}
+@media screen and (min-width:414px) and (max-width:639px){html{font-size:16px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+@media screen and (min-width:720px) and (max-width:750px){html{font-size:22.5px}}
+@media screen and (min-width: 751px){
+  html{
+    font-size: 22.5px;
+  }
+  body{
+    max-width: 750px !important;
+    margin: 0 auto;
+  }
+  .view-container{
+    width:750px;
+  }
+}
+body,button,h1, h2, h3, h4, h5, h6{
+  font-family: "PingFang SC","Microfoft yahei" !important;
+}
+//文字超出省略号
+.text_ellipsis(@line){
+  display: -webkit-box !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @line;
+}
+//暂无数据
+.nodata{
+  padding: 10px;
+  background-color:#ededed;
+  text-align: center;
+  font-size: 18px;
+  color: #ffa931;
+}
+///头部样式
+@color_blue:#0175ec;
+.bar_coustom_header{
+  border-bottom: 1px solid #CCCCCC;
+}
+.header{
+  padding:5px 12px;
+  background-image:none ;
+  .title{
+    font-weight:600;
+  }
+  //button颜色
+  .button_fff{
+    background-color: #fff;
+  }
+  .left_btn{
+    color: @color_blue;
+    .button{
+      max-width: 60px;
+      padding:0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size:14px;
+      font-weight: 600;
+      color: @color_blue;
+      &.activated{
+        border-color:transparent;
+        background-color: transparent;
+      }
+    }
+    i{
+      font-size:16px;
+      &:before{
+        margin-top:9px;
+      }
+    }
+    .location_icon{
+    }
+  }
+
+  .goback_icon{
+    position: relative;
+    top: 2px;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    background: url(../img/main.png) no-repeat;
+    display: inline-block;
+    background-size: 50px auto;
+    background-position: -30px -700px;
+  }
+  .search_icon{
+    display: block;
+    //height: 25px;
+    width: 40px;
+    top:2px;
+    right:7px;
+    background-image: url(../img/main.png);
+    background-repeat: no-repeat;
+    background-size: 50px auto;
+    background-position: 14px -176px;
+  }
+  .shareOthers{
+    display: block;
+    width: 40px;
+    top:2px;
+    right:7px;
+    background-image: url(../img/main.png);
+    background-repeat: no-repeat;
+    background-size: 50px auto;
+    background-position: -15px -723px;
+  }
+  .goToMap{
+    width: 38px;
+    display: inline-block;
+    height: 25px;
+    position: relative;
+    top: 2px;
+    padding: 0;
+    background: url(../img/jy-icon.png) -75px 6px no-repeat;
+    background-size: 100px;
+  }
+
+}
+
+
+//  tab.html tabs 样式
+#app-tabs{
+  //  底部图标---start
+  .scenicRecommend-off,
+  .scenicRecommend-on,
+  .tourismAndListen-off,
+  .tourismAndListen-on,
+  .travelNotes-off,
+  .travelNotes-on,
+  .personalCenter-off,
+  .personalCenter-on{
+    width: 25px;
+    background-image: url(../img/autoGuide_icons.png) ;
+    background-repeat: no-repeat;
+    background-size: 50px;
+  }
+  .scenicRecommend-off{
+    background-position: 1px 4px;
+  }
+  .scenicRecommend-on{
+    background-position: -23px 4px;
+  }
+  .tourismAndListen-off{
+    background-position: -2px -25px;;
+  }
+  .tourismAndListen-on{
+    background-position: -26px -25px;;
+  }
+  .travelNotes-off{
+    background-position: 0px -56px;
+  }
+  .travelNotes-on{
+    background-position:-25px -56px ;
+  }
+  .personalCenter-off{
+    background-position:-1px -85px ;
+  }
+  .personalCenter-on{
+    background-position:-25px -85px ;
+  }
+  //  底部图标---end
+
+  //  修改标题颜色---start
+  .tab-item{
+    color: #808080;
+    line-height: 10px;
+  }
+  .tab-item.tab-item-active{
+    color: #237eec;
+  }
+  //  修改背景颜色
+  .tabs{
+    background-color: rgba(230, 230, 230, 0.96) ;
+  }
+  //  修改标题颜色---end
+
+}
+
+
+//点赞的图标ng-class---------S----------
+.LoveOrHide{
+  display: inline-block;
+  background-image: url(../img/autoGuide_icons.png);
+  background-repeat: no-repeat;
+  background-size: 50px auto;
+  width: 22px;
+  height: 20px;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+}
+.myLove{
+  background-position: -22px -195px;
+}
+
+.myHide{
+  background-position: -22px -175px;
+}
+//点赞的图标ng-class---------E----------
+
+// 定义弹框样式
+.bounced{
+  position: absolute;
+  top:40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 16px;
+  color: #ffffff;
+  background-color: rgba(0,0,0,0.7);
+  padding: 10px 20px;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+  border-radius:8px;
+  white-space: nowrap;
+  z-index: 99;
+}
+.noMoreData{
+  text-align: center;
+  background-color: #F2F2F2;
+  height: 100vh;
+  img{
+    width: 43vw;
+    margin-top: 15vh;
+  }
+  h3{
+    font-size: 15px;
+    margin-top: 10px;
+    color: #666666;
+  }
+}
+.dataFly{
+  text-align: center;
+  background-color: #f2f2f2;
+  height: 100vh;
+  img{
+    width: 37vw;
+    margin-top: 23vh;
+  }
+  h3{
+    font-size: 15px;
+    margin-top: 20px;
+    color: #666666;
+  }
+}
+.hasMoreCollect{
+  text-align: center;
+  background-color: #f2f2f2;
+  height: 100vh;
+  img{
+    width: 35vw;
+    margin-top: 25vh;
+  }
+  h3{
+    font-size: 15px;
+    margin-top: 20px;
+    color: #666666;
+  }
+}
+
+//修改默认确认弹框
+.popup-container{
+  .popup{
+    border-radius: 8px;
+    background-color: #fff;
+    .popup-head{
+      .popup-sub-title{
+        font-size:13px;
+        color:#000;
+      }
+    }
+    .popup-buttons{
+      min-height: 38px;
+      padding:0;
+      .button{
+        min-height: 22px;
+        color:#0175EC;
+        background-color:#fff;
+        &.button-default{
+          border-bottom-left-radius: 8px;
+          &.activated{
+            border:none;
+          }
+        }
+        &.button-positive{
+          color:#0175EC;
+          background-color:#fff;
+          border-left: 1px solid #eee;
+          border-bottom-right-radius: 8px;
+          &.activated{
+            border:none;
+          }
+        }
+      }
+    }
+  }
+}
+
+//地图marker样式
+.amap-marker-label{
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 13px;
+  transform: translate(-45%);
+  border-radius: 5px;
+  line-height: 20px;
+  border:1px solid #ededed;
+}
+
+// 地图内小图标样式
+.amap-icon img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+//去掉高德地图底部logo
+.amap-logo{
+  display: none;
+}
+.amap-copyright{
+  display: none !important;
+}
+
+//地图、列表也切换按钮
+.switch_btn_map{
+  position: absolute;
+  z-index: 3;
+  right: 12px;
+  top: 278px;
+  width: 32px;
+  height: 32px;
+  background: url(../img/icon_new.png) no-repeat -110px -100px;
+  background-size: 150px;
+}
+.switch_btn_list{
+  position: absolute;
+  z-index: 3;
+  right: 12px;
+  top: 278px;
+  width: 32px;
+  height: 32px;
+  background: url(../img/icon_new.png) no-repeat -62px -100px;
+  background-size: 150px;
+}
+//列表标签 ---价格  VR---
+.price{
+  display: inline-block;
+  height: 20px;
+  padding: 2px 8px;
+  line-height: 20px;
+  position: absolute;
+  top:0;
+  left:0;
+  border-bottom-right-radius: 10px;
+  background-color: rgba(60,226,137,0.8);
+  font-size: 12px;
+  color: #fff;
+}
+//vr
+.vr_logo{
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  background: url(../img/icon_new.png) no-repeat -100px -62px;
+  background-size: 150px;
+}
+//延迟加载样式
+.image-loader-container{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+//进入语音播放器按钮
+.music_btn{
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  position: absolute;
+  bottom: -23px;
+  right: 15px;
+  background: url(../img/icon_new.png) no-repeat -100px -6px;
+  background-size: 150px;
+}
+
+.bottom_angle{
+  content: "";
+  width: 0 ;
+  height: 0;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%);
+  border: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+}
+//消息徽章样式
+.tabs .tab-item .badge{
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #DC3807;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+}
+
+//$ionicActionSheet默认样式修改
+.action-sheet{
+  margin:0;
+  .button{
+    font-size:15px;
+    color:#333;
+  }
+  .action-sheet-group{
+    border-radius:0;
+  }
+  .action-sheet-options{
+    margin-bottom:5px;
+    background-color:#fff;
+  }
+  .action-sheet-cancel{
+    margin-bottom:0;
+    font-size:18px;
+    color:#000;
+  }
+}

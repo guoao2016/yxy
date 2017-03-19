@@ -1,0 +1,79 @@
+<ion-view id="travelNotes" view-title="旅游攻略" cache-view="true">
+  <ion-header-bar align-title="center" class="header bar_coustom_header">
+    <div class="buttons left_btn">
+      <label>
+        <button class="button" ng-click="showModal()">{{cityName}}</button>
+        <i class="ion-ios-arrow-down"></i>
+      </label>
+    </div>
+    <h1 class="title">旅游攻略</h1>
+    <div class="buttons">
+      <button class="button search_icon" ui-sref="travelNotesSearch"></button><!--跳转到攻略搜索页面-->
+    </div>
+  </ion-header-bar>
+  <ion-content class="travelNotesContent" lazy-scroll>
+    <div ng-show="successGetData && code === 0"><!-- 数据成功返回才显示这模块 -->
+      <div class="firstNotes">
+        <a ng-href="#/travelDetail/{{firstNotesData.id}}">
+          <img image-lazy-src="http://tourism.yxzhy.cc{{firstNotesData.thumbnail}}" image-lazy-loader="ios">
+          <div class="moreMessage">
+            <div class="title">{{firstNotesData.title}}</div>
+            <div class="tips">
+              <div class="lt-tips">{{firstNotesData.summary}}</div>
+              <div class="rt-tips"><i class="LoveOrHide myLove"></i>{{firstNotesData.upvoteCounts}}</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="othersNotes" ng-show="othersNotesData">
+        <div class="notes-list" ng-repeat="item in othersNotesData">
+          <a ng-href="#/travelDetail/{{item.id}}" class="notes-item " >
+            <img class="item-left" image-lazy-src="http://tourism.yxzhy.cc{{item.thumbnail}}" image-lazy-loader="ios">
+            <div class="item-right" ng-style="{width:getWidth()}"><!-- 动态获取width的值-->
+              <h4  ng-style="{width:getWidth()}">{{item.title}}</h4>
+              <p class="otherSummary">{{item.summary.slice(0,25)}}</p><!-- 后台已限制字符个数，这里再做安全限制-->
+              <p class="orIcon"><i class="LoveOrHide myLove"></i>{{item.upvoteCounts}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div ng-show="!successGetData" class="dataFly">
+      <img ng-src="assets/img/dataFly.png" alt="">
+      <h3>数据已经飞走了!</h3>
+    </div><!-- 没有数据时，显示 -->
+  </ion-content>
+</ion-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

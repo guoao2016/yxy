@@ -1,0 +1,46 @@
+<!--景区攻略-->
+<ion-view id="sceneryStrategy" view-title="景区攻略" cache-view="true">
+    <ion-header-bar align-title="center" class="header bar_coustom_header">
+        <div class="buttons left_btn">
+            <!--返回-->
+            <div class="buttons">
+                <button ng-click="$ionicGoBack()" class="button goback_icon"></button>
+            </div>
+        </div>
+        <h1 class="title">景区攻略</h1>
+    </ion-header-bar>
+    <div ng-show="successGetData" class="bounced">{{alertMessage}}</div>
+    <ion-content class="scenery_strategy">
+        <div ng-show="true">
+            <section class="tl-strategy">
+                <div class="strategy-group list-group" >
+                    <a class="list-item" ng-repeat="item in items" ng-href="#/sceneryStrategyDetail/{{item.id}}">
+                        <div class="lt">
+                            <img  ng-if="item.thumb320"
+                                  ng-src="{{domain}}{{item.thumb320}}" alt="">
+                            <img  ng-if="!item.thumb320"
+                                  ng-src="{{domain}}{{item.thumbnail}}" alt="">
+                        </div>
+                        <div class="rt">
+                            <div class="p-title">
+                                <p class="tl">{{item.title}}</p>
+                                <p class="p-notes">{{item.summary}}</p>
+                            </div>
+                            <div class="p-info">
+                                <!--<span  class="brief">详细简介</span>-->
+                                <div class="rt-thumb">
+                                    <span class="thumbs-up"></span>
+                                    {{item.upvoteCounts}}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </ion-content>
+</ion-view>
+
+
+
+

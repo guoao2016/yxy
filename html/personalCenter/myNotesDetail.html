@@ -1,0 +1,23 @@
+<ion-view id="myNotesDetail" class="myTravel" view-title="游记详情">
+    <ion-header-bar align-title="center" class="header bar_coustom_header">
+        <div class="buttons left_btn">
+            <div class="buttons">
+                <button class="button goback_icon" ng-click="$ionicGoBack()"></button>
+            </div>
+        </div>
+        <h1 class="title">游记详情</h1>
+    </ion-header-bar>
+    <ion-content>
+
+    </ion-content>
+    <ion-footer-bar class="footer">
+        <ul>
+            <li style="display:none;"ng-click="report($event)"><i></i>举报</li>
+            <li ng-click="writeComment()"><i></i>写评论</li>
+            <li>
+                <!--自定义指令---点赞-->
+                <like number="item.upvoteCounts" id="item.id"></like>
+            </li>
+        </ul>
+    </ion-footer-bar>
+</ion-view>

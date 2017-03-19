@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--<html manifest="tourism.manifest">-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=4, user-scalable=no, width=device-width">
+    <title>tab页切换</title>
+    <!-- 公共css -->
+    <link href="ionic.css" rel="stylesheet">
+    <script src="ionic.bundle.min.js"></script>
+    <style>
+      .wrap{
+        display:flex;
+      }
+      .tabs-top > .tabs, .tabs.tabs-top{
+        top:0;
+      }
+    </style>
+  </head>
+  <body ng-app="myApp">
+    <div class="wrap">
+      <p>返回</p>
+      <ion-tabs class="tabs-positive tabs-striped tabs-top">
+        <ion-tab title="热门">
+          <ion-view>
+            <ion-content class="calm-bg">
+              tab 1 content
+            </ion-content>
+          </ion-view>
+        </ion-tab>
+        <ion-tab title="最新">
+          <ion-view>
+            <ion-content class="balanced-bg">
+              tab 2 content
+            </ion-content>
+          </ion-view>
+        </ion-tab>
+        <ion-tab title="推荐">
+          <ion-view>
+            <ion-content class="energized-bg">
+              tab 3 content
+            </ion-content>
+          </ion-view>
+        </ion-tab>
+      </ion-tabs>
+    </div>
+
+  </body>
+  <script>
+    var app=angular.module('myApp',['ionic']);
+  </script>
+</html>

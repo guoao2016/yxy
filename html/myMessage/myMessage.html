@@ -1,0 +1,90 @@
+<ion-view  id="myMessage" view-title="我的信息" cache-view="false">
+    <p class="left_goback ion-ios-arrow-left" ng-click="$ionicGoBack()"></p>
+    <ion-tabs class="tabs-striped tabs-top">
+            <ion-tab title="公告" badge="unreadNoticeCount">
+                <ion-view  id="myNotice" ng-controller="Notice">
+                    <ion-content class="myNotice">
+                        <ul class="wrap">
+                            <li ng-repeat="item in noticeItems">
+                                <div class="icon">
+                                    <img ng-src="assets/img/logo.jpg" alt="icon">
+                                </div>
+                                <div class="talkbubble">
+                                    <p class="text">{{item.content}}</p>
+                                    <p class="time">{{item.createTime | date:"MM月dd日"}}</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!--滚动加载-->
+                        <ion-infinite-scroll
+                                immediate-check="false"
+                                ng-if="!noMorePage"
+                                distance="2%"
+                                on-infinite="loadData()">
+                        </ion-infinite-scroll>
+                    </ion-content>
+                </ion-view>
+            </ion-tab>
+            <ion-tab title="信息" badge="unreadInfoCount">
+                <ion-view  id="myInformation" view-title="信息" ng-controller="Information">
+                    <ion-content class="myInfo">
+                        <ul class="wrap">
+                            <li ng-repeat="item in infoItems">
+                                <div class="icon">
+                                    <img ng-src="assets/img/logo.jpg" alt="icon">
+                                </div>
+                                <div class="info_wrap talkbubble">
+                                    <p class="nick">{{item.sender}}</p>
+                                    <p class="text">{{item.content}}</p>
+                                    <p class="time">{{item.createTime | date:"MM月dd日 HH:mm"}}
+                                        <!--<reply token="token" id="item.id" nick="item.nick" content="item.content" pid="replytItem.pid"></reply>-->
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!--滚动加载-->
+                        <ion-infinite-scroll
+                            immediate-check="false"
+                            ng-if="!noMorePage"
+                            distance="2%"
+                            on-infinite="loadData()">
+                        </ion-infinite-scroll>
+                    </ion-content>
+
+                </ion-view>
+
+            </ion-tab>
+            <ion-tab title="提醒" badge="unreadRemindCount">
+                <ion-view  id="myRemind" view-title="提醒" cache-view="true" ng-controller="Remind">
+                    <ion-content class="myRemind">
+                        <ul class="wrap">
+                            <li ng-repeat="item in remindItems">
+                                <div class="icon">
+                                    <img ng-src="assets/img/logo.jpg" alt="icon">
+                                </div>
+                                <div class="remind_wrap">
+                                    <p class="nick">{{item.sender}}</p>
+                                    <p class="text">{{item.content}}</p>
+                                    <p class="time">{{item.createTime | date:"MM月dd日"}}</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!--滚动加载-->
+                        <ion-infinite-scroll
+                            immediate-check="false"
+                            ng-if="!noMorePage"
+                            distance="2%"
+                            on-infinite="loadData()">
+                        </ion-infinite-scroll>
+                    </ion-content>
+
+                </ion-view>
+
+            </ion-tab>
+    </ion-tabs>
+</ion-view>
+
+

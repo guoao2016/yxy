@@ -1,0 +1,69 @@
+<ion-view id="audioPlay" view-title="马上听" cache-view="false">
+	<ion-header-bar align-title="center" class="header">
+		<div class="buttons left_btn">
+			<button ng-click="$ionicGoBack()" class="button ion-ios-arrow-left"></button>
+		</div>
+		<h1 class="title">{{title}}</h1>
+	</ion-header-bar>
+	<div id="containner">
+
+		<div class="song-pic">
+			<img id="songImg"  ng-src="{{img}}"/>
+		</div>
+		<!--<audio id="myAudio" src=""></audio>-->
+
+		<div id="castList">
+			<div class="times">
+				<div class="startTime">
+					<i class="startTime1">00</i>:<i class="startTime2">00</i>
+				</div>
+				<div class="allTime">
+					<i class="allTime1">00</i>:<i class="allTime2">00</i>
+				</div>
+			</div>
+
+			<div id="songInfo">
+				<div id="castPercent">
+					<div id="percent"></div>
+				</div>
+				<div class="cricle"></div>
+
+			</div>
+
+			<div id="songControl">
+				<div id="controlList">
+					<input id="prevSong" type="button" class="button"  ng-click="preAudio()" />
+					<input id="toggle" type="button" class="button" value="" ng-click="control()"/>
+					<input id="nextSong" type="button" class="button" ng-click="nextAudio()" />
+					<!--<input id="toggleVoice" type="button" class="button" value="禁音"/>-->
+					<!--<input id="voice" type="range" class="button" max="1.0" min="0.0" step="0.05"/>	-->
+				</div>
+			</div>
+
+		</div>
+
+		<!--<audio id="myAudio" src="" autoplay loop="0" autostart="true" hidden="true"></audio>-->
+
+	</div>
+	<ion-content class="padding-list">
+
+		<div id="containner-list">
+			
+			<a id="song-list" class="" data-num=" i " ng-repeat="item in dataAll" data-img="{{item.thumb320}}" ng-click="itemClick(item.thumb320,item.voice,$index)">
+				<img ng-src="{{domain}}{{item.thumb320}}" onerror="javascript:this.src='https://static.oschina.net/uploads/user/131/263977_50.jpg'"/>
+				<div class="listText">
+					{{item.title}}
+					<span class="showLogo"></span>
+				</div>
+			</a>
+		</div>
+		<!--&lt;!&ndash;<div id="song-list">-->
+    			<!--<img src="https://tourism.yxzhy.cc/upload/images/1481529637378.jpg"/>-->
+    			<!--<div class="list-text">-->
+    				<!--深圳世界之窗-->
+    			<!--</div>-->
+    		<!--</div>-->
+    		
+
+    </ion-content>
+</ion-view>

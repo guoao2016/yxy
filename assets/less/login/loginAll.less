@@ -1,0 +1,291 @@
+#loginAll{
+  img{
+    width: 100%;
+    height: 100vh;
+    vertical-align: middle;
+  }
+  .bar-header{
+    background: transparent;
+    .ion-ios-arrow-left{
+      width: 30px;
+      height: 34px;
+      font-size: 24px;
+      line-height: 33px;
+      text-align: center;
+      color: #fff;
+      position: absolute;
+      z-index: 99;
+    }
+    .title{
+      color: #fff;
+    }
+  }
+  .formMain{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    .form{
+      margin: 10vh 12px 0;
+      .errorMessage{
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.4);
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        color: #FFFFFF;
+        font-size: 16px;
+        white-space: nowrap;
+        p{
+          padding: 1px 10px;
+          font-size: 12px;
+        }
+        .ion-alert-circled:before {
+          padding-right: 5px;
+          color: #F19504;
+        }
+      }
+      .inputContent{
+        color: #666;
+        background-color: rgba(237,237,237,0.8);
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 7px;
+        .userName,.userPassword{
+          display: -webkit-flex;
+          display: flex;
+          align-items: center;
+          padding: 10px 10px;
+          margin: 2px 10px;
+          label{
+            font-size: 16px;
+            //flex: 0 0 25%;
+            text-align: center;
+            //padding-right: 10px;
+            font-weight: 600;
+            white-space: nowrap;
+          }
+          input{
+            font-size: 16px;
+            flex: 1 1 75%;
+            width: 100%;
+            background-color: transparent;
+            height: 34px;
+            line-height: 34px;
+
+            &::-webkit-input-placeholder{
+              font-style:normal;
+              font-size: 15px;
+              color: #999999;
+            }
+            &:-moz-placeholder{
+              font-style:normal;
+              font-size: 15px;
+              color: #999999;
+            }
+            &::-moz-placeholder{
+              font-style:normal;
+              font-size: 15px;
+              color: #999999;
+            }
+            &:-ms-input-placeholder{
+              font-style:normal;
+              font-size: 15px;
+              color: #999999;
+            }
+          }
+        }
+        .userName{
+          border-bottom: 1px solid #b2b2b2;
+        }
+      }
+      .forgetPassword{
+        text-align: right;
+        padding: 10px 0;
+        span{
+          font-size: 13px;
+          color: #FFFFFF;
+        }
+      }
+      .confirm{
+        //margin-top: 0vh;
+        font-size: 18px;
+        button{
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          border-radius: 10px;
+          color: #FFFFFF;
+          font-size: 18px;
+          background-color: #0175EC;
+          margin-top:0;
+        }
+      }
+    }
+    .goToRegister{
+      font-weight: 600;
+      background-color: #F19504;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+      color: #FFFFFF;
+      font-size: 18px;
+      max-height: 47px;
+      line-height: 47px;
+      text-align: center;
+      margin: 0 12px;
+    }
+  }
+
+
+  #register{
+    .inputContent{
+      .borderBottom{
+        position: relative;
+        border-bottom: 1px solid #b2b2b2;
+      }
+      label{
+        font-size: 16px;
+        //flex: 0 0 25%;
+        text-align: center;
+        //padding-right: 10px;
+        font-weight: 600;
+      }
+      .getCode{
+        text-align: right;
+        color: #0175EC;
+        position: absolute;
+        right: 10px;
+        white-space: nowrap;
+        height: 34px;
+        background-color: transparent;
+      }
+    }
+    .forgetPassword{
+      padding-left: 10px;
+      text-align: left;
+      color: #FFFFFF;
+      font-size: 12px;
+      span{
+        color: #0175EC;
+        font-size: 12px;
+      }
+    }
+    .confirm{
+      .registerBtn{
+        background-color: #F19504;
+      }
+      .getPassWordBtn{
+        background-color: #0175EC;
+        font-weight: 600;
+      }
+    }
+  }
+  .goToLogin{
+    background-color: #0175EC;
+    font-weight: 600;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 18px;
+    max-height: 47px;
+    line-height: 47px;
+    text-align: center;
+    margin: 0 12px;
+  }
+  #getPassword{
+    .inputContent{
+      .borderBottom{
+        position: relative;
+        border-bottom: 1px solid #b2b2b2;
+      }
+      label{
+        font-size: 16px;
+        //flex: 0 0 25%;
+        text-align: center;
+        //padding-right: 10px;
+        font-weight: 600;
+      }
+      .getCode{
+        text-align: right;
+        color: #0175EC;
+        position: absolute;
+        right: 10px;
+        white-space: nowrap;
+        height: 34px;
+        background-color: transparent;
+      }
+    }
+    .forgetPassword{
+      padding-left: 10px;
+      text-align: left;
+      color: #FFFFFF;
+      span{
+        color: #0175EC;
+      }
+    }
+    .confirm{
+      .getPassWordBtn{
+        background-color: #0175EC;
+        font-weight: 600;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+#platformProtocol{
+  .bar-header{
+    background-color: #f7f7f7;
+    .ion-ios-arrow-left{
+      width: 30px;
+      height: 100%;
+      font-size: 24px;
+      line-height: 33px;
+      text-align: center;
+      color: #0175ec;
+      z-index: 99;
+    }
+    .title{
+      color: #000;
+    }
+  }
+  .mainContent{
+    padding: 44px 12px 0;
+    font-size: 12px;
+    .title{
+      text-align:center;
+      margin:10px 0;
+      text-indent: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    h3{
+      font-weight: 600;
+      margin:10px 0;
+      font-size: 14px;
+
+    }
+    h4{
+      margin:8px 0;
+      font-weight: 600;
+    }
+    p{
+      margin:6px 0;
+    }
+    span.text-bold{
+      font-weight:bold;
+    }
+    span.text-underline {
+      text-decoration:underline;
+    }
+    .end{
+      margin-top:10px;
+    }
+
+  }
+
+}

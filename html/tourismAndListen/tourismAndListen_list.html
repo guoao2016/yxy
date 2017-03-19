@@ -1,0 +1,57 @@
+<ion-view  id="tourismAndListenList" view-title="边游边听"  cache-view="true">
+  <!--地图、列表切换按钮-->
+  <ion-header-bar align-title="center" no-tap-scroll="false" class="header bar_coustom_header">
+    <div class="buttons left_btn">
+      <label>
+        <button class="button" ng-click="showModal()">{{cityName}}</button>
+        <i class="ion-ios-arrow-down"></i>
+    </label>
+    </div>
+    <h1 class="title">边游边听</h1>
+  </ion-header-bar>
+  <button type="button" class="switch_btn_map" ui-sref="tab.tourismAndListen.map"></button>
+  <ion-content
+          class="tourisem_listen"
+          ng-controller="caseNavCtrl"
+          lazy-scroll
+          delegate-handle="scenicList">
+    <ul>
+      <li ng-repeat="item in items track by $index"
+                class="scenery_box"
+                ui-sref="tourismAndListen_detail({itemId:item.id})">
+        <div class="img_bg">
+          <img image-lazy-src="http://tourism.yxzhy.cc{{!item.thumb640?item.thumbnail:item.thumb640}}"
+
+               image-lazy-loader="ios">
+          <span ng-if="item.spotCounts>0" class="price">{{item.spotCounts}}个景点讲解</span>
+          <span ng-if="item.vrUrl" class="vr_logo"></span>
+          <span class="bottom_angle"></span>
+          <button type="button" class="button music_btn"
+                  ng-click="$event.stopPropagation()"
+                  ui-sref="audioPlay({itemId:item.id})">
+          </button>
+        </div>
+        <div class="img_info">
+            <h4 class="title">{{item.title}}</h4>
+            <p class="detail">
+              <span>{{item.level==0?'未评':item.level+'A'}}级景区</span>
+              <span ng-if="item.ticketPrice"> - 门票：{{item.ticketPrice}}元/人 </span>
+              <span ng-if="item.distance"> - 距您
+                {{item.distance>1?item.distance+'公里':item.distance*1000+'米'}}
+              </span>
+            </p>
+        </div>
+      </li>
+    </ul>
+    <ion-infinite-scroll
+              immediate-check="false"
+              ng-if="!noMorePage"
+              distance="2%"
+              on-infinite="loadData()">
+    </ion-infinite-scroll>
+    <div ng-show="!successGetData" class="dataFly">
+      <img ng-src="assets/img/dataFly.png" alt="">
+      <h3>数据已经飞走了!</h3>
+    </div>
+  </ion-content>
+</ion-view>

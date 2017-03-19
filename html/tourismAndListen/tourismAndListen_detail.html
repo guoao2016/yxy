@@ -1,0 +1,151 @@
+<ion-view id="tourismAndListenDetail" view-title="边游边听" cache-view="false">
+  <ion-header-bar align-title="center" class="header bar_coustom_header">
+    <div class="buttons left_btn">
+      <div class="buttons">
+        <!--ng-click="$ionicGoBack()"   ui-sref="tab.tourismAndListen"-->
+        <button   ng-click="$ionicGoBack()" class="button goback_icon"></button>
+      </div>
+
+    </div>
+    <h1 ng-click="slideUp=!slideUp;closeTabs()" class="title">
+      边游边听
+      <i class="slide_btn down" ng-class="{'up':slideUp}"></i>
+    </h1>
+  </ion-header-bar>
+
+
+  <ion-content  ng-click="closeTabs()" ng-controller="caseNavCtrl" scrollbar-y="false">
+    <section class="wrap hasHeader scenery-area-detail">
+      <!--高德地图-->
+      <section  id="container">
+
+      </section>
+      <!--背景-->
+    </section>
+  </ion-content>
+  <!--景区详情下拉显示层-->
+  <section  ng-show="slideUp" ng-click="slideUp=!slideUp" class="sub_detail_bg">
+    <section class="sub_detail btn_fixed">
+        <img class="img_bg"
+             ng-src="{{domain}}{{scenicItem.thumbnail}}">
+         <section class="top_bg">
+          <h3 class="area">{{scenicItem.title}}</h3>
+          <p class="area_intro">
+            <span>{{scenicItem.level==0?'未评':scenicItem.level+'A'}}级景区</span>
+            <span> - {{scenicItem.spotCounts}}个景点</span>
+            <!--<span> - 距您23.9公里</span>-->
+          </p>
+          <!--5导航按钮-->
+          <section class="icons row">
+            <a ng-href="#/guideMap/{{scenicItem.uuid}}" class="col-20">
+              <img ng-src="assets/img/tourismAndListen/area_guide.png" alt="">
+              <p>导览图</p>
+            </a>
+            <a ui-sref="VR({vrUrl:vrurl})" class="col-20">
+              <img ng-src="assets/img/tourismAndListen/VR.png" alt="">
+              <p>VR/实景</p>
+            </a>
+            <a ng-href="#/sceneryArea_detail/{{scenicItem.uuid}}"  class="col-20">
+              <img ng-src="assets/img/tourismAndListen/video_explain.png" alt="">
+              <p>景区详情</p>
+            </a>
+            <a ng-href="#/sceneryStrategy/{{scenicItem.uuid}}"  class="col-20">
+              <img ng-src="assets/img/tourismAndListen/strate.png" alt="">
+              <p>景区攻略</p>
+            </a>
+            <!--<a ng-click="goHere()"-->
+               <!--class="col-20">-->
+              <!--<img ng-src="assets/img/tourismAndListen/listen.png" alt="">-->
+              <!--<p>马上听</p>-->
+            <!--</a>-->
+            <a ng-click="$event.stopPropagation()"
+               ui-sref="audioPlay({itemId:scenicItem.uuid})"
+               class="col-20">
+              <img ng-src="assets/img/tourismAndListen/listen.png" alt="">
+              <p>马上听</p>
+            </a>
+        </section>
+      </section>
+    </section>
+  </section>
+
+
+  <!--底部tab-->
+  <section class="bottom_tabs btn_fixed">
+    <div class="weui_tab">
+      <div class="weui_navbar">
+        <a data-tab="tab1"
+           class="weui_navbar_item">
+          <span class="area"></span>周边景区
+        </a>
+        <a data-tab="tab2"
+           class="weui_navbar_item">
+          <span class="spot"></span>景点列表
+        </a>
+        <a data-tab="tab3"
+           class="weui_navbar_item">
+          <span class="line"></span>推荐路线
+        </a>
+      </div>
+      <div class="weui_tab_bd">
+        <div id="tab1" class="weui_tab_bd_item">
+          <section class="area_lists lists_item">
+            <h3 ng-click="closeTabs()"> 周边景区 <i class="close_btn"></i></h3>
+            <ul>
+              <li ng-repeat="item in scenicAroundItems">
+              <a ng-href="#/sceneryArea_detail/{{item.id}}">
+                <span></span>
+                {{item.title}}
+              </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div id="tab2" class="weui_tab_bd_item">
+          <section class="spot_lists lists_item">
+            <h3 ng-click="closeTabs()">{{scenicItem.title}}
+              <span>（{{scenicItem.spotCounts}}个景点)</span>
+              <i class="close_btn"></i>
+            </h3>
+            <ul>
+              <li ng-repeat="spotlist in spotlists">
+                <a ng-href="#/secnerySpot_detail/{{spotlist.id}}">
+                  <span></span>{{spotlist.title}}
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div id="tab3" class="weui_tab_bd_item">
+          <section class="line_lists lists_item">
+            <h3 ng-click="closeTabs()">{{scenicItem.title}}
+              <!--<span ng-if="hasReco">({{recoItems.msg}})</span>-->
+              <i class="close_btn"></i>
+            </h3>
+            <ul>
+              <li ng-if="recoItems.code==0"
+                  ng-repeat="item in recoItems.data">
+                <a href="javascript:void(0);"
+                   class="close_btn"
+                   ng-click="paintLine($index)">
+                  {{item.name}}
+
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    $('.weui_navbar_item').on('click',function () {
+      $(this).addClass('nav_tab_on');
+      $(this).siblings().removeClass('nav_tab_on');
+      $('#'+$(this).attr('data-tab')).addClass('weui_tab_bd_item_active');
+      $('#'+$(this).attr('data-tab')).siblings().removeClass('weui_tab_bd_item_active');
+    })
+  </script>
+</ion-view>

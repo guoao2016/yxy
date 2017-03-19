@@ -1,0 +1,90 @@
+<ion-view id="myNotesList" class="myTravel" view-title="我的游记">
+    <ion-header-bar align-title="center" class="header bar_coustom_header">
+        <div class="buttons left_btn">
+            <div class="buttons">
+                <button class="button goback_icon" ui-sref="tab.userCenter">
+                </button>
+            </div>
+        </div>
+        <h1 class="title">我的游记</h1>
+        <div class="buttons">
+            <button class="button text_color_blue" type="button"
+                    ui-sref="myNotesSend" style="color:#0175ec;">
+                写游记
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <ul class="wrap">
+            <li ng-repeat="item in travelListItems track by $index">
+                <myactionsheet token="token"
+                               open="item.open"
+                               travelid="item.id">
+                </myactionsheet>
+                <div class="discern">
+                    <!--左边头像-->
+                    <div class="user_logo">
+                        <img ng-src="{{item.icon}}" alt="">
+                    </div>
+                    <!--右边内容-->
+                    <div class="detail" ui-sref="myTravelDetail({itemId:item.id})">
+                        <!--时间-->
+                        <div class="info">
+                            <div class="left">
+                                <p>{{item.nick}}</p>
+                                <p>{{item.createTime*1000 | date:"MM月dd日 HH:mm"}} {{item.address}}</p>
+                            </div>
+                        </div>
+                        <div class="text">
+                            {{item.content.substring(0,104)}}
+                            <span ng-if="item.content.length>104">...</span>
+                            <div ng-if="item.content.length>104" class="seeMore">查看全文</div>
+                        </div>
+                        <!--一张图片-->
+                        <div ng-if="item.images.length==1"
+                             ng-repeat="photo in item.images track by $index"
+                             class="one_photo">
+                            <img ng-src="{{photo.thumb320}}" alt="">
+                        </div>
+                        <!--多张-->
+                        <ul class="row photos"
+                            ng-if="item.images.length>1">
+                            <li class="col col-33"
+                                ng-if="$index<9"
+                                ng-repeat="photo in item.images"
+                                ng-style="{'background-image':'url('+photo.thumb320+')'}"
+                                on-repeat-finished-render>
+                            </li>
+                        </ul>
+
+                        <!--下部点赞、评论、举报-->
+                        <ul class="bottom">
+                            <li>
+                                <!--自定义指令---点赞-->
+                                <like number="item.upvoteCounts" id="item.id"></like>
+                                <span class="comment">
+                                <i></i>{{item.commentsCount>0?item.commentsCount:''}}&nbsp;评论
+                            </span>
+                            </li>
+                            <!--举报-->
+                            <li   ng-show="false">
+                                <span></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+
+        <!--滚动加载-->
+        <ion-infinite-scroll
+                immediate-check="false"
+                ng-if="!noMorePage"
+                distance="2%"
+                on-infinite="loadData()">
+        </ion-infinite-scroll>
+    </ion-content>
+
+
+</ion-view>

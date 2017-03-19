@@ -1,0 +1,106 @@
+#travelDetail{
+  .main_title{
+    padding: 10px 12px ;
+    text-align: center;
+    h3{
+      font-size: 18px; ;
+      font-weight: 400;
+    }
+    .sub_title{
+      font-size: 12px;
+      color: #f19503;
+      padding-top: 5px;
+      background-color: #FFFFFF;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      //span{
+      //  position: relative;
+      //  font-size: 12px;
+      //  color: #f19503;
+      //  padding: 0 20px;
+      //  background-color: #FFFFFF;
+        //&:after,&:before{
+        //  content: '';
+        //  display: block;
+        //  width: 6px;
+        //  height: 6px;
+        //  border-radius: 50%;
+        //  background-color: #999;
+        //  position: absolute;
+        //}
+        //&:after{
+        //  top: 5px;
+        //  left: 0;
+        //}
+        //&:before{
+        //  top:5px;
+        //  right: 0;
+        //}
+      //}
+      //i{
+      //  display: inline-block;
+      //  margin: 0 auto;
+      //  width: 100%;
+      //  height: 1px;
+      //  position: absolute;
+      //  top: 19px;
+      //  left: 0;
+      //  background: #ccc;
+      //}
+    }
+  }
+  .main_content{
+    padding: 0 12px 50px;
+    img{
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+  .travelDetail_footer{
+    background-color: #f7f7f7;
+    text-align: center;
+    display: flex;
+    line-height: 36px;
+    padding: 10px 0;
+    .logo{
+      display: inline-block;
+      background-image: url(../img/main.png);
+      width: 25px;
+      height: 25px;
+    }
+    .number{
+      padding-left: 1px;
+      position: relative;
+      top: -5px;
+    }
+    .left{
+      flex: 1;
+      border-right: 1px solid #9f9f9f;
+      // 用于切换图标
+      .logo_has{
+        background-position: -38px -292px !important;
+        background-size: 75px;
+      }
+      .logo_no{
+        background-position: -38px -269px;
+        background-size: 75px;
+      }
+    }
+    .right{
+      flex: 1;
+      // 用于切换图标
+      .logo_has{
+        background-position: -1px -2874px !important;
+        background-size: 50px;
+      }
+      .logo_no{
+        background-position: -25px -2874px;
+        background-size: 50px;
+      }
+    }
+  }
+}
